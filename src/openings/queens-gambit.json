@@ -1,0 +1,576 @@
+{
+  "id": "queens-gambit",
+  "name": "Queen's Gambit",
+  "eco": "D06–D69",
+  "side": "white",
+  "summary": "White offers the c-pawn to pull Black's d-pawn away from the center. It is less a real gambit than a fight for the e4 square and the open c-file. The ideas are classical: develop quickly, claim the center, and build pressure slowly.",
+  "chunks": [
+    {
+      "id": "intro",
+      "title": "Introduction & Main Line",
+      "summary": "The core move order 1.d4 d5 2.c4 and why it works: White attacks the d5 pawn from the side and asks Black how they want to defend the center.",
+      "keyIdeas": [
+        "2.c4 attacks d5 from the side. If Black takes, White can usually win the pawn back with e3 and Bxc4.",
+        "Against 2...e6 the natural development is Nc3, Nf6 and Bg5, which piles pressure on d5.",
+        "White's long-term plans are the minority attack (b4–b5), a central e4 break, or play on the half-open c-file."
+      ],
+      "line": [
+        {
+          "san": "d4",
+          "note": "Claims the center and frees the c1 bishop. The queen already protects d4."
+        },
+        {
+          "san": "d5",
+          "note": "The classical reply. Black matches White in the center."
+        },
+        {
+          "san": "c4",
+          "note": "The Queen's Gambit. It challenges d5 without blocking the c-pawn with a knight."
+        },
+        {
+          "san": "e6",
+          "note": "The Queen's Gambit Declined. Black backs up d5 but shuts in the c8 bishop."
+        },
+        {
+          "san": "Nc3",
+          "note": "More pressure on d5. White develops toward the center."
+        },
+        {
+          "san": "Nf6",
+          "note": "Black defends d5 a third time and gets ready to castle."
+        },
+        {
+          "san": "Bg5",
+          "note": "Pins the f6 knight, which is one of d5's defenders."
+        }
+      ],
+      "questions": [
+        {
+          "id": "qg-intro-1",
+          "moves": [],
+          "prompt": "You're White. Start the Queen's Gambit.",
+          "answer": "d4",
+          "hint": "Push a center pawn that the queen already protects.",
+          "explanation": "1.d4 takes space, opens the c1 bishop and starts every Queen's Gambit.",
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+        },
+        {
+          "id": "qg-intro-2",
+          "moves": [
+            "d4",
+            "d5"
+          ],
+          "prompt": "Black matched you in the center. Offer the gambit.",
+          "answer": "c4",
+          "hint": "Hit d5 from the side with a flank pawn.",
+          "explanation": "2.c4 attacks d5 without blocking the c-pawn. If Black takes, White usually wins the pawn back with e3 and Bxc4.",
+          "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
+        },
+        {
+          "id": "qg-intro-3",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "e6"
+          ],
+          "prompt": "Black declined the gambit with 2...e6. Which developing move adds pressure to d5?",
+          "answer": "Nc3",
+          "alternatives": [
+            "Nf3"
+          ],
+          "hint": "Develop the queenside knight.",
+          "explanation": "3.Nc3 is the main line. The knight hits d5 and prepares Bg5. 3.Nf3 is also good and more flexible.",
+          "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+        }
+      ]
+    },
+    {
+      "id": "accepted",
+      "title": "Queen's Gambit Accepted",
+      "summary": "Black takes on c4 and gives up the center for a while in exchange for free development. White's job is to win the pawn back calmly and keep a central advantage.",
+      "keyIdeas": [
+        "Don't hurry to win back c4. e3 and Bxc4 get it back, because Black cannot safely hold the pawn.",
+        "White's bishop lands on c4 with tempo, aimed at f7 and the center.",
+        "Black's typical plan is ...c5 and ...a6–b5. White answers by castling and thinking about Qe2, Rd1 and a central e4 push."
+      ],
+      "line": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "dxc4",
+          "note": "The Accepted. Black gives up the center to develop freely."
+        },
+        {
+          "san": "Nf3",
+          "note": "Stops ...e5 and develops. White isn't worried about the c4 pawn yet."
+        },
+        {
+          "san": "Nf6",
+          "note": "Natural development. It also keeps White from playing e4 for free."
+        },
+        {
+          "san": "e3",
+          "note": "Opens the f1 bishop, which gets ready to take on c4."
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Bxc4",
+          "note": "The pawn is back. White has a central edge and an active bishop."
+        },
+        {
+          "san": "c5",
+          "note": "Black's standard central counter-strike."
+        },
+        {
+          "san": "O-O",
+          "note": "King to safety first. The tension in the center can wait."
+        },
+        {
+          "san": "a6",
+          "note": "Prepares ...b5 to kick the bishop."
+        }
+      ],
+      "questions": [
+        {
+          "id": "qg-qga-1",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "dxc4"
+          ],
+          "prompt": "Black accepted the gambit. What's the most flexible developing move?",
+          "answer": "Nf3",
+          "alternatives": [
+            "e3",
+            "e4"
+          ],
+          "hint": "Develop a knight that also stops ...e5.",
+          "explanation": "3.Nf3 develops and stops ...e5. 3.e3 and 3.e4 are also main lines. The c4 pawn will come back.",
+          "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+        },
+        {
+          "id": "qg-qga-2",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "dxc4",
+            "Nf3",
+            "Nf6",
+            "e3",
+            "e6"
+          ],
+          "prompt": "Time to collect the gambit pawn.",
+          "answer": "Bxc4",
+          "hint": "The light-squared bishop now has a path to c4.",
+          "explanation": "5.Bxc4 wins the pawn back and puts the bishop on its best diagonal. White keeps a small central edge.",
+          "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq - 0 5"
+        },
+        {
+          "id": "qg-qga-3",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "dxc4",
+            "Nf3",
+            "Nf6",
+            "e3",
+            "e6",
+            "Bxc4",
+            "c5"
+          ],
+          "prompt": "Black hits your center with ...c5. What's the calm, principled reply?",
+          "answer": "O-O",
+          "hint": "King safety first.",
+          "explanation": "6.O-O finishes the kingside setup. Taking on c5 or locking the center too early only helps Black.",
+          "fen": "rnbqkb1r/pp3ppp/4pn2/2p5/2BP4/4PN2/PP3PPP/RNBQK2R w KQkq - 0 6"
+        }
+      ]
+    },
+    {
+      "id": "orthodox",
+      "title": "Declined: Orthodox Defense",
+      "summary": "Black keeps a solid pawn on d5 with ...e6, ...Be7 and ...Nbd7. White develops for maximum pressure and fights over the c4 square and the c-file.",
+      "keyIdeas": [
+        "Bg5 pins the f6 knight, which is one of d5's defenders.",
+        "The fight for a tempo. White plays useful moves like Rc1 before Bd3, because Black wants to take on c4 only once the bishop has moved.",
+        "Watch out for the Elephant Trap. The d5 pawn often looks loose when it isn't (see Traps)."
+      ],
+      "line": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bg5",
+          "note": "The pin. White now threatens to win d5 by taking on f6."
+        },
+        {
+          "san": "Be7",
+          "note": "Breaks the pin and gets ready to castle."
+        },
+        {
+          "san": "e3",
+          "note": "Solid. Protects d4 and opens the f1 bishop."
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nbd7",
+          "note": "The Orthodox setup. Black supports ...c5 or ...e5 later."
+        },
+        {
+          "san": "Rc1",
+          "note": "A useful waiting move. It aims at the c-file before Black plays ...c5."
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bd3",
+          "note": "Black can now take on c4, but White wins it back in one move."
+        },
+        {
+          "san": "dxc4"
+        },
+        {
+          "san": "Bxc4",
+          "note": "White keeps a small but lasting edge thanks to the extra space."
+        }
+      ],
+      "questions": [
+        {
+          "id": "qg-ortho-1",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "e6",
+            "Nc3",
+            "Nf6"
+          ],
+          "prompt": "Black defends d5 with the knight. Put pressure on that defender.",
+          "answer": "Bg5",
+          "alternatives": [
+            "Nf3",
+            "cxd5"
+          ],
+          "hint": "Pin the f6 knight to the queen.",
+          "explanation": "4.Bg5 pins the knight that guards d5. That defines the classical Orthodox lines.",
+          "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+        },
+        {
+          "id": "qg-ortho-2",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "e6",
+            "Nc3",
+            "Nf6",
+            "Bg5",
+            "Be7",
+            "e3",
+            "O-O"
+          ],
+          "prompt": "Both sides are developing. Bring out your last minor piece.",
+          "answer": "Nf3",
+          "alternatives": [
+            "Rc1"
+          ],
+          "hint": "The kingside knight is still at home.",
+          "explanation": "6.Nf3 is the main line. It finishes minor-piece development and supports d4 and e5.",
+          "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR w KQ - 1 6"
+        },
+        {
+          "id": "qg-ortho-3",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "e6",
+            "Nc3",
+            "Nf6",
+            "Bg5",
+            "Be7",
+            "e3",
+            "O-O",
+            "Nf3",
+            "Nbd7",
+            "Rc1",
+            "c6",
+            "Bd3",
+            "dxc4"
+          ],
+          "prompt": "Black finally took on c4. Restore material.",
+          "answer": "Bxc4",
+          "hint": "Win the pawn back without losing a tempo.",
+          "explanation": "9.Bxc4. This is the classic fight for a tempo. Black waited until Bd3 to take, so the bishop moves twice. White's useful Rc1 makes up for it, and the small space edge stays.",
+          "fen": "r1bq1rk1/pp1nbppp/2p1pn2/6B1/2pP4/2NBPN2/PP3PPP/2RQK2R w K - 0 9"
+        }
+      ]
+    },
+    {
+      "id": "slav",
+      "title": "Slav Defense",
+      "summary": "Black defends d5 with ...c6, which keeps the c8 bishop free to develop. White plays a4 to stop ...b5, wins back c4, and aims for e4.",
+      "keyIdeas": [
+        "After ...dxc4, Black wants to hold the pawn with ...b5. 5.a4 stops that for good.",
+        "Black's main development is ...Bf5, putting the bishop outside the pawn chain before ...e6.",
+        "White's bishop wins back c4. Then the plan is e3, O-O, Qe2 and a central break with e4."
+      ],
+      "line": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "c6",
+          "note": "The Slav. It supports d5 without shutting in the c8 bishop."
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "dxc4",
+          "note": "Now Black takes and hopes to hold the pawn with ...b5."
+        },
+        {
+          "san": "a4",
+          "note": "Stops ...b5 for good. The c4 pawn is now weak."
+        },
+        {
+          "san": "Bf5",
+          "note": "The point of the Slav. The bishop comes out before ...e6."
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Bxc4",
+          "note": "Material is level, and White has a central majority."
+        },
+        {
+          "san": "Bb4",
+          "note": "Pins the c3 knight to make e4 harder."
+        },
+        {
+          "san": "O-O",
+          "note": "Next comes Qe2 and e4 to break open the center."
+        }
+      ],
+      "questions": [
+        {
+          "id": "qg-slav-1",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "c6"
+          ],
+          "prompt": "The Slav. What's the most flexible developing move?",
+          "answer": "Nf3",
+          "alternatives": [
+            "Nc3"
+          ],
+          "hint": "Develop the kingside knight first.",
+          "explanation": "3.Nf3 develops while keeping options open. It also covers e5 and d4.",
+          "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+        },
+        {
+          "id": "qg-slav-2",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "c6",
+            "Nf3",
+            "Nf6",
+            "Nc3",
+            "dxc4"
+          ],
+          "prompt": "Black took on c4 and wants to hold it with ...b5. Stop that plan.",
+          "answer": "a4",
+          "hint": "A rook-pawn move puts a stop to ...b5.",
+          "explanation": "5.a4 takes away ...b5. The c4 pawn can't be held, and White will win it back with Bxc4.",
+          "fen": "rnbqkb1r/pp2pppp/2p2n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5"
+        },
+        {
+          "id": "qg-slav-3",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "c6",
+            "Nf3",
+            "Nf6",
+            "Nc3",
+            "dxc4",
+            "a4",
+            "Bf5",
+            "e3",
+            "e6"
+          ],
+          "prompt": "Collect the pawn and develop with tempo.",
+          "answer": "Bxc4",
+          "hint": "e3 opened a diagonal for your bishop.",
+          "explanation": "7.Bxc4 wins the pawn back. White has an easy game with O-O, Qe2 and e4 to come.",
+          "fen": "rn1qkb1r/pp3ppp/2p1pn2/5b2/P1pP4/2N1PN2/1P3PPP/R1BQKB1R w KQkq - 0 7"
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps & Pitfalls",
+      "summary": "Two classic traps. One punishes Black for greedily holding the gambit pawn. The other is a trap White must not fall into when d5 looks loose.",
+      "keyIdeas": [
+        "If Black holds c4 with ...b5, a4 undermines the chain. Then Qf3 uses the long diagonal to hit the a8 rook.",
+        "The Elephant Trap: after cxd5 exd5, Nxd5?? loses to ...Nxd5!, because Bxd8 is met by ...Bb4+ and Black comes out a piece ahead.",
+        "Pins work both ways. Before you grab a pawn, check whether your own pieces are overloaded."
+      ],
+      "line": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "dxc4"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "b5",
+          "note": "Greedy. Black tries to hang on to the c4 pawn."
+        },
+        {
+          "san": "a4",
+          "note": "Hits the base of the pawn chain right away."
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "axb5"
+        },
+        {
+          "san": "cxb5"
+        },
+        {
+          "san": "Qf3",
+          "note": "The long diagonal f3–a8 is open. The rook on a8 and the knight on b8 can't both be saved."
+        }
+      ],
+      "questions": [
+        {
+          "id": "qg-trap-1",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "dxc4",
+            "e3",
+            "b5"
+          ],
+          "prompt": "Black is trying to keep the extra pawn with ...b5. Punish it.",
+          "answer": "a4",
+          "hint": "Attack the b5 pawn, the base of the chain.",
+          "explanation": "4.a4 undermines the b5–c4 chain at once. Black's queenside starts to come apart.",
+          "fen": "rnbqkbnr/p1p1pppp/8/1p6/2pP4/4P3/PP3PPP/RNBQKBNR w KQkq - 0 4"
+        },
+        {
+          "id": "qg-trap-2",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "dxc4",
+            "e3",
+            "b5",
+            "a4",
+            "c6",
+            "axb5",
+            "cxb5"
+          ],
+          "prompt": "Black's queenside pawns have gone. Find the move that wins material.",
+          "answer": "Qf3",
+          "hint": "Look at the long light-squared diagonal toward a8.",
+          "explanation": "6.Qf3! hits the a8 rook along the open diagonal. Black has to give up material, for example 6...Nc6 7.Qxc6+.",
+          "fen": "rnbqkbnr/p3pppp/8/1p6/2pP4/4P3/1P3PPP/RNBQKBNR w KQkq - 0 6"
+        },
+        {
+          "id": "qg-trap-3",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "e6",
+            "Nc3",
+            "Nf6",
+            "Bg5",
+            "Nbd7",
+            "cxd5",
+            "exd5"
+          ],
+          "prompt": "d5 looks like it's hanging because the f6 knight is pinned. Is it? Play the correct move.",
+          "answer": "e3",
+          "alternatives": [
+            "Nf3"
+          ],
+          "hint": "Don't take on d5. Just keep developing.",
+          "explanation": "6.e3! The Elephant Trap is 6.Nxd5?? Nxd5! 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8, and Black is a piece up. The pin on f6 isn't real.",
+          "fen": "r1bqkb1r/pppn1ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq - 0 6"
+        }
+      ]
+    }
+  ]
+}

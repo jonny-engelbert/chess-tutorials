@@ -1,0 +1,692 @@
+{
+  "id": "caro-kann",
+  "name": "Caro-Kann Defense",
+  "eco": "B10–B19",
+  "side": "black",
+  "summary": "A solid, resilient answer to 1.e4. Black prepares ...d5 with ...c6, so the center can be challenged without shutting in the light-squared bishop the way the French does. You get a sound pawn structure and good endgames, plus clear plans against every White setup.",
+  "chunks": [
+    {
+      "id": "intro",
+      "title": "Introduction & Core Idea",
+      "summary": "1...c6 prepares 2...d5. If White trades or pushes, Black's light-squared bishop usually gets out to f5 or g4 before ...e6 locks it in.",
+      "keyIdeas": [
+        "...c6 supports ...d5, so after exd5 Black recaptures with a pawn and keeps a central pawn.",
+        "Develop the c8 bishop outside the chain (...Bf5 or ...Bg4) before playing ...e6.",
+        "Against quiet systems like the Two Knights, ...Bg4 pins the f3 knight and fights for e5 and d4."
+      ],
+      "line": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c6",
+          "note": "Prepares ...d5 with pawn support."
+        },
+        {
+          "san": "d4",
+          "note": "White takes the full center."
+        },
+        {
+          "san": "d5",
+          "note": "The challenge. The e4 pawn is attacked, and White has to choose a system."
+        },
+        {
+          "san": "Nc3",
+          "note": "Defends e4. This leads to the Classical or Main Line."
+        },
+        {
+          "san": "dxe4"
+        },
+        {
+          "san": "Nxe4",
+          "note": "Now Black's bishop heads for f5."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ck-intro-1",
+          "moves": [
+            "e4"
+          ],
+          "prompt": "You're Black. Answer 1.e4 with the Caro-Kann.",
+          "answer": "c6",
+          "hint": "A quiet pawn move that prepares ...d5.",
+          "explanation": "1...c6 prepares ...d5 with pawn support. It is the defining move of the Caro-Kann.",
+          "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+        },
+        {
+          "id": "ck-intro-2",
+          "moves": [
+            "e4",
+            "c6",
+            "d4"
+          ],
+          "prompt": "White builds the classical center. Strike back.",
+          "answer": "d5",
+          "hint": "The point of 1...c6.",
+          "explanation": "2...d5 attacks e4. If exd5, the c6 pawn recaptures and Black keeps a central pawn.",
+          "fen": "rnbqkbnr/pp1ppppp/2p5/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2"
+        },
+        {
+          "id": "ck-intro-3",
+          "moves": [
+            "e4",
+            "c6",
+            "Nc3",
+            "d5",
+            "Nf3"
+          ],
+          "prompt": "The Two Knights Variation. Develop your problem bishop actively.",
+          "answer": "Bg4",
+          "hint": "Pin the f3 knight.",
+          "explanation": "3...Bg4 develops the light-squared bishop with a pin, before ...e6. Black is happy to swap it for the f3 knight.",
+          "fen": "rnbqkbnr/pp2pppp/2p5/3p4/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 1 3"
+        }
+      ]
+    },
+    {
+      "id": "classical",
+      "title": "Classical Variation (4...Bf5)",
+      "summary": "After 3.Nc3 dxe4 4.Nxe4, Black develops ...Bf5 with tempo. White chases the bishop with Ng3 and h4–h5, and Black has to know the precise retreats.",
+      "keyIdeas": [
+        "4...Bf5 hits the e4 knight with tempo, and the bishop gets outside the pawn chain.",
+        "After Ng3, retreat to g6 so the bishop stays on the b1–h7 diagonal.",
+        "Answer h4 with ...h6 so the bishop has an escape square on h7. After h5, retreat ...Bh7."
+      ],
+      "line": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "dxe4"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Bf5",
+          "note": "Develops with tempo on the knight."
+        },
+        {
+          "san": "Ng3",
+          "note": "The knight steps aside and hits the bishop again."
+        },
+        {
+          "san": "Bg6",
+          "note": "Stays on the active diagonal."
+        },
+        {
+          "san": "h4",
+          "note": "Threatens h5 to trap the bishop."
+        },
+        {
+          "san": "h6",
+          "note": "Gives the bishop the h7 square."
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nd7",
+          "note": "Stops Ne5 and prepares ...Ngf6."
+        },
+        {
+          "san": "h5"
+        },
+        {
+          "san": "Bh7"
+        },
+        {
+          "san": "Bd3",
+          "note": "White offers a bishop trade, which helps Black."
+        },
+        {
+          "san": "Bxd3"
+        },
+        {
+          "san": "Qxd3"
+        },
+        {
+          "san": "e6",
+          "note": "A solid structure. Black plans ...Ngf6, ...Be7 or ...Qc7, and castles queenside."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ck-class-1",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "Nc3",
+            "dxe4",
+            "Nxe4"
+          ],
+          "prompt": "The knight sits on e4. Develop with tempo.",
+          "answer": "Bf5",
+          "hint": "Your light-squared bishop can attack the knight.",
+          "explanation": "4...Bf5 is the Classical. The bishop develops outside the chain and hits the e4 knight.",
+          "fen": "rnbqkbnr/pp2pppp/2p5/8/3PN3/8/PPP2PPP/R1BQKBNR b KQkq - 0 4"
+        },
+        {
+          "id": "ck-class-2",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "Nc3",
+            "dxe4",
+            "Nxe4",
+            "Bf5",
+            "Ng3"
+          ],
+          "prompt": "The knight hits your bishop. Where does it go?",
+          "answer": "Bg6",
+          "hint": "Stay on the same diagonal.",
+          "explanation": "5...Bg6 keeps the bishop on the b1–h7 diagonal, where it can trade off White's best bishop later.",
+          "fen": "rn1qkbnr/pp2pppp/2p5/5b2/3P4/6N1/PPP2PPP/R1BQKBNR b KQkq - 2 5"
+        },
+        {
+          "id": "ck-class-3",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "Nc3",
+            "dxe4",
+            "Nxe4",
+            "Bf5",
+            "Ng3",
+            "Bg6",
+            "h4",
+            "h6",
+            "Nf3",
+            "Nd7",
+            "h5"
+          ],
+          "prompt": "h5 hits your bishop again. Find the safe square.",
+          "answer": "Bh7",
+          "hint": "This is why you played ...h6.",
+          "explanation": "8...Bh7. The square you made with ...h6 keeps the bishop safe. Next comes Bd3 Bxd3 and Qxd3 e6.",
+          "fen": "r2qkbnr/pp1nppp1/2p3bp/7P/3P4/5NN1/PPP2PP1/R1BQKB1R b KQkq - 0 8"
+        }
+      ]
+    },
+    {
+      "id": "advance",
+      "title": "Advance Variation",
+      "summary": "White grabs space with 3.e5. Black develops ...Bf5 first, then plays ...e6 and the thematic ...c5 to hit the base of White's d4 pawn.",
+      "keyIdeas": [
+        "The bishop comes out to f5 before ...e6. That is the Caro-Kann's edge over the French.",
+        "...c5 attacks the base of the chain on d4. Black often spends two moves with the c-pawn, and that's fine.",
+        "Against the aggressive g4 lines, keep the bishop on the b1–h7 diagonal with ...Bg6. Avoid ...Be4 if Nxe4 is possible."
+      ],
+      "line": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "e5",
+          "note": "The Advance. White gains space and cramps Black's kingside."
+        },
+        {
+          "san": "Bf5",
+          "note": "Bishop out first."
+        },
+        {
+          "san": "Nf3",
+          "note": "The Short system. Quiet and flexible."
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "c5",
+          "note": "Hits d4. Black's c-pawn has moved twice, but the timing is right."
+        },
+        {
+          "san": "Be3",
+          "note": "Supports d4 and invites ...cxd4."
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Ne7",
+          "note": "Heads for c6 or g6. This is a standard, balanced position."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ck-adv-1",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "e5"
+          ],
+          "prompt": "White pushed to e5. Activate your key piece before ...e6.",
+          "answer": "Bf5",
+          "hint": "The light-squared bishop wants to be outside the chain.",
+          "explanation": "3...Bf5 develops the bishop before ...e6 shuts it in. That is the main idea of the Caro-Kann.",
+          "fen": "rnbqkbnr/pp2pppp/2p5/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+        },
+        {
+          "id": "ck-adv-2",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "e5",
+            "Bf5",
+            "Nf3"
+          ],
+          "prompt": "The bishop is out. Now build your pawn chain.",
+          "answer": "e6",
+          "hint": "Support d5 and open your dark-squared bishop.",
+          "explanation": "4...e6 supports d5 and opens the f8 bishop. The c8 bishop is already outside, so nothing gets shut in.",
+          "fen": "rn1qkbnr/pp2pppp/2p5/3pPb2/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq - 2 4"
+        },
+        {
+          "id": "ck-adv-3",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "e5",
+            "Bf5",
+            "Nf3",
+            "e6",
+            "Be2"
+          ],
+          "prompt": "Find the thematic pawn break against White's chain.",
+          "answer": "c5",
+          "alternatives": [
+            "Nd7"
+          ],
+          "hint": "Attack the base of the chain on d4.",
+          "explanation": "5...c5! hits d4, the base of White's chain. Spending a second move with the c-pawn is fine because White's setup is slow.",
+          "fen": "rn1qkbnr/pp3ppp/2p1p3/3pPb2/3P4/5N2/PPP1BPPP/RNBQK2R b KQkq - 1 5"
+        }
+      ]
+    },
+    {
+      "id": "exchange",
+      "title": "Exchange Variation",
+      "summary": "3.exd5 cxd5 gives a symmetrical structure, and with 4.Bd3 and c3 White sets up a reversed Carlsbad. Black develops actively, and ...Bg4 is the key idea.",
+      "keyIdeas": [
+        "Always recapture toward the center with ...cxd5.",
+        "...Nc6 puts pressure on d4 and gets ready for ...Bg4.",
+        "...Bg4 develops the light-squared bishop actively, usually aiming to trade it for White's f3 knight."
+      ],
+      "line": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "cxd5",
+          "note": "The pawn structure is symmetrical, with open c- and e-files."
+        },
+        {
+          "san": "Bd3",
+          "note": "Stops ...Bf5."
+        },
+        {
+          "san": "Nc6",
+          "note": "Pressure on d4."
+        },
+        {
+          "san": "c3",
+          "note": "A reversed Carlsbad structure for White."
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "Bg4",
+          "note": "Active development, ready to take on f3 or pin it."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ck-exch-1",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "exd5"
+          ],
+          "prompt": "White exchanged on d5. Recapture correctly.",
+          "answer": "cxd5",
+          "hint": "This is why the c-pawn is on c6.",
+          "explanation": "3...cxd5. Black keeps a strong central pawn, and the c-file opens up for Black's major pieces.",
+          "fen": "rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+        },
+        {
+          "id": "ck-exch-2",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "exd5",
+            "cxd5",
+            "Bd3"
+          ],
+          "prompt": "Bd3 stops ...Bf5. Develop with pressure on the center.",
+          "answer": "Nc6",
+          "alternatives": [
+            "Nf6"
+          ],
+          "hint": "Your queenside knight can eye d4.",
+          "explanation": "4...Nc6 adds pressure to d4 and keeps the ...Bg4 plan open.",
+          "fen": "rnbqkbnr/pp2pppp/8/3p4/3P4/3B4/PPP2PPP/RNBQK1NR b KQkq - 1 4"
+        },
+        {
+          "id": "ck-exch-3",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "exd5",
+            "cxd5",
+            "Bd3",
+            "Nc6",
+            "c3",
+            "Nf6",
+            "Bf4"
+          ],
+          "prompt": "Find the active square for your light-squared bishop.",
+          "answer": "Bg4",
+          "hint": "f5 is covered by the d3 bishop. Try the other diagonal.",
+          "explanation": "6...Bg4! develops actively. Black's bishop is now better than its counterpart, and White often spends a tempo on Qb3, hitting b7.",
+          "fen": "r1bqkb1r/pp2pppp/2n2n2/3p4/3P1B2/2PB4/PP3PPP/RN1QK1NR b KQkq - 2 6"
+        }
+      ]
+    },
+    {
+      "id": "panov",
+      "title": "Panov–Botvinnik Attack",
+      "summary": "With 4.c4, White accepts an isolated d-pawn in return for fast piece play. Black blockades on d5 and develops calmly.",
+      "keyIdeas": [
+        "Pressure on d5 comes right away, so ...Nf6 is essential.",
+        "...e6 and ...Be7 give a solid setup. Black later blockades the isolated pawn on d5.",
+        "After cxd5, retake with the knight. It is the ideal blockader on d5."
+      ],
+      "line": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "cxd5"
+        },
+        {
+          "san": "c4",
+          "note": "The Panov. White heads for active, open positions."
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "e6",
+          "note": "Solid. Black is happy to give White an isolated queen's pawn."
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "cxd5"
+        },
+        {
+          "san": "Nxd5",
+          "note": "The knight blockades on d5. White has an isolated d-pawn."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ck-panov-1",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "exd5",
+            "cxd5",
+            "c4"
+          ],
+          "prompt": "White hits d5 again with the c-pawn. Defend actively.",
+          "answer": "Nf6",
+          "hint": "Develop a piece that guards d5.",
+          "explanation": "4...Nf6 develops and defends d5. That's the main line.",
+          "fen": "rnbqkbnr/pp2pppp/8/3p4/2PP4/8/PP3PPP/RNBQKBNR b KQkq - 0 4"
+        },
+        {
+          "id": "ck-panov-2",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "exd5",
+            "cxd5",
+            "c4",
+            "Nf6",
+            "Nc3"
+          ],
+          "prompt": "Choose the solid move that supports d5 and opens your bishop.",
+          "answer": "e6",
+          "alternatives": [
+            "Nc6",
+            "g6"
+          ],
+          "hint": "A pawn move that backs up d5.",
+          "explanation": "5...e6 is the safest line. Black heads for a standard isolated-queen's-pawn position.",
+          "fen": "rnbqkb1r/pp2pppp/5n2/3p4/2PP4/2N5/PP3PPP/R1BQKBNR b KQkq - 2 5"
+        },
+        {
+          "id": "ck-panov-3",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "exd5",
+            "cxd5",
+            "c4",
+            "Nf6",
+            "Nc3",
+            "e6",
+            "Nf3",
+            "Be7",
+            "cxd5"
+          ],
+          "prompt": "White took on d5. Recapture with the right piece.",
+          "answer": "Nxd5",
+          "alternatives": [
+            "exd5"
+          ],
+          "hint": "Put a piece on the blockading square.",
+          "explanation": "7...Nxd5 leaves White with an isolated d-pawn and puts a knight on the perfect blockading square.",
+          "fen": "rnbqk2r/pp2bppp/4pn2/3P4/3P4/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 7"
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps to Avoid",
+      "summary": "Three classic Caro-Kann mistakes: a smothered mate on d6, a bishop trapped by h4–h5, and a bishop swapped off badly on e4.",
+      "keyIdeas": [
+        "With a queen on e2 and your e-pawn on e7, ...Ngf6?? lets Nd6 deliver smothered mate.",
+        "When White pushes h4, make room for the bishop with ...h6 or block with ...h5.",
+        "Don't put the bishop on e4 where a knight can take it. After Nxe4 dxe4 you've given up your best minor piece and kept a weak e4 pawn."
+      ],
+      "line": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "dxe4"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Nd7",
+          "note": "The Karpov system. It is solid, but there is one trap to know."
+        },
+        {
+          "san": "Qe2",
+          "note": "A trap. 5...Ngf6?? 6.Nd6# is smothered mate."
+        },
+        {
+          "san": "Ndf6",
+          "note": "Correct. The d7 knight goes to f6, which keeps d7 free for the king."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ck-trap-1",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "Nc3",
+            "dxe4",
+            "Nxe4",
+            "Nd7",
+            "Qe2"
+          ],
+          "prompt": "White's queen is on e2 and your e7 pawn is pinned. Develop without walking into mate.",
+          "answer": "Ndf6",
+          "hint": "Which knight should go to f6? Keep d7 free for your king.",
+          "explanation": "5...Ndf6! After 5...Ngf6?? 6.Nd6# it's smothered mate: e7 is pinned and the king has no squares.",
+          "fen": "r1bqkbnr/pp1npppp/2p5/8/3PN3/8/PPP1QPPP/R1B1KBNR b KQkq - 2 5"
+        },
+        {
+          "id": "ck-trap-2",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "Nc3",
+            "dxe4",
+            "Nxe4",
+            "Bf5",
+            "Ng3",
+            "Bg6",
+            "h4"
+          ],
+          "prompt": "White threatens h5 to trap your bishop. Stop it.",
+          "answer": "h6",
+          "alternatives": [
+            "h5"
+          ],
+          "hint": "Make an escape square for the bishop.",
+          "explanation": "6...h6 opens up h7 for the bishop. 6...h5 is also playable. Ignoring the threat loses the bishop to h5.",
+          "fen": "rn1qkbnr/pp2pppp/2p3b1/8/3P3P/6N1/PPP2PP1/R1BQKBNR b KQkq - 0 6"
+        },
+        {
+          "id": "ck-trap-3",
+          "moves": [
+            "e4",
+            "c6",
+            "d4",
+            "d5",
+            "e5",
+            "Bf5",
+            "Nc3",
+            "e6",
+            "g4"
+          ],
+          "prompt": "White lunges with g4. Where must the bishop go?",
+          "answer": "Bg6",
+          "hint": "e4 looks tempting, but the c3 knight covers it.",
+          "explanation": "5...Bg6 stays on the b1–h7 diagonal, and ...c5 comes next. 5...Be4? 6.Nxe4 dxe4 gives up Black's best minor piece and leaves a weak pawn on e4.",
+          "fen": "rn1qkbnr/pp3ppp/2p1p3/3pPb2/3P2P1/2N5/PPP2P1P/R1BQKBNR b KQkq - 0 5"
+        }
+      ]
+    }
+  ]
+}
