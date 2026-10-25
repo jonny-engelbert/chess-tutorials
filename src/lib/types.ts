@@ -3,6 +3,10 @@ export type Side = 'white' | 'black';
 export interface LineMove {
   san: string;
   note?: string;
+  /** Compare a legal candidate in the position BEFORE this move. */
+  comparison?: { san: string; explanation: string };
+  /** Ungraded reasoning prompt shown before playing this move. */
+  checkpoint?: { prompt: string; answer: string };
 }
 
 export interface Question {
@@ -25,6 +29,7 @@ export interface Chunk {
   title: string;
   summary: string;
   keyIdeas: string[];
+  plans?: { white: string; black: string };
   line: LineMove[];
   questions: Question[];
 }
@@ -36,6 +41,7 @@ export interface Opening {
   side: Side;
   summary: string;
   chunks: Chunk[];
+  sources?: { title: string; url: string }[];
 }
 
 /** A question together with where it lives — the unit of spaced repetition. */

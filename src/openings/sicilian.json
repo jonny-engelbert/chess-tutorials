@@ -1,0 +1,704 @@
+{
+  "id": "sicilian",
+  "name": "Sicilian Defense",
+  "eco": "B20–B99",
+  "side": "black",
+  "summary": "Meet 1.e4 with ...c5 and fight for d4 from the flank. Learn a Classical Open Sicilian setup and practical replies to the Alapin, Closed Sicilian and Rossolimo, with explanations of both sides' plans.",
+  "sources": [
+    {
+      "title": "Chess.com: Sicilian Defense",
+      "url": "https://www.chess.com/openings/Sicilian-Defense"
+    },
+    {
+      "title": "Chess.com: Closed Sicilian",
+      "url": "https://www.chess.com/openings/Closed-Sicilian-Defense"
+    }
+  ],
+  "chunks": [
+    {
+      "id": "intro",
+      "title": "Introduction: Fight for d4",
+      "summary": "Understand what ...c5 achieves before learning a setup. The central exchange opens a file and gives both sides different strengths.",
+      "keyIdeas": [
+        "...c5 controls d4, but does not attack the pawn on e4 directly.",
+        "After d4 cxd4 Nxd4, Black has a half-open c-file; White has quick development and more space.",
+        "This repertoire uses 2...Nc6. After 3.Bb5, use the Rossolimo lesson rather than following the Open Sicilian line automatically."
+      ],
+      "plans": {
+        "white": "Develop quickly, support e4 and look for central or kingside activity. Black's uncastled king may matter if the position opens early.",
+        "black": "Develop and secure the king before using the c-file. Prepare ...d5 only when the center and king can withstand the exchanges."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "White claims central space and opens the f1 bishop."
+        },
+        {
+          "san": "c5",
+          "note": "Controls d4 with a flank pawn. Black creates an asymmetric position rather than matching e4 with ...e5.",
+          "comparison": {
+            "san": "e5",
+            "explanation": "1...e5 is a sound classical defense, but creates a different pawn structure and opens the f8 bishop immediately. ...c5 instead contests d4 from the side; it is a repertoire choice, not a refutation of ...e5."
+          }
+        },
+        {
+          "san": "Nf3",
+          "note": "Develops toward the center and prepares d4."
+        },
+        {
+          "san": "Nc6",
+          "note": "Develops the b8 knight and adds control of d4. This move order also allows White's Bb5 Rossolimo."
+        },
+        {
+          "san": "d4",
+          "note": "White challenges the center, offering a central pawn for Black's c-pawn."
+        },
+        {
+          "san": "cxd4",
+          "note": "Exchanges the c-pawn for White's d-pawn. Black gets a half-open c-file and retains both central pawns, while White gains room for active pieces.",
+          "checkpoint": {
+            "prompt": "If you exchange c5 for d4, which file becomes half-open for Black, and what does White gain?",
+            "answer": "The c-file becomes half-open for Black. White gains an active knight on d4 and quick development, so Black should not start attacking before bringing out the pieces."
+          }
+        },
+        {
+          "san": "Nxd4",
+          "note": "White recaptures with an active knight rather than bringing the queen out."
+        },
+        {
+          "san": "Nf6",
+          "note": "Develops with an attack on e4. White must account for that threat, usually by defending with Nc3."
+        }
+      ],
+      "questions": [
+        {
+          "id": "si-intro-1",
+          "moves": [
+            "e4"
+          ],
+          "prompt": "You're Black. Start the Sicilian by controlling d4 with a flank pawn.",
+          "answer": "c5",
+          "alternatives": [],
+          "hint": "Advance the c-pawn two squares.",
+          "explanation": "1...c5 contests d4 without mirroring e4. Unlike ...e5, it leaves Black's e-pawn flexible, but does not free the f8 bishop yet.",
+          "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+        },
+        {
+          "id": "si-intro-2",
+          "moves": [
+            "e4",
+            "c5",
+            "Nf3"
+          ],
+          "prompt": "White developed Nf3. Develop your queenside knight and reinforce d4 in this repertoire.",
+          "answer": "Nc6",
+          "alternatives": [
+            "d6",
+            "e6"
+          ],
+          "hint": "Use the b8 knight.",
+          "explanation": "2...Nc6 develops and controls d4. ...d6 and ...e6 are also sound Sicilian move orders; this course uses ...Nc6 and covers the Bb5 reply it permits.",
+          "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
+        },
+        {
+          "id": "si-intro-3",
+          "moves": [
+            "e4",
+            "c5",
+            "Nf3",
+            "Nc6",
+            "d4"
+          ],
+          "prompt": "White played d4. Exchange your flank pawn for the central pawn.",
+          "answer": "cxd4",
+          "alternatives": [],
+          "hint": "The c5 pawn can capture on d4.",
+          "explanation": "3...cxd4 exchanges the c-pawn for White's d-pawn. Black gains a half-open c-file, but White gets active development after Nxd4. Neither benefit is a forced advantage.",
+          "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+        }
+      ]
+    },
+    {
+      "id": "classical",
+      "title": "Open Sicilian: Classical Development",
+      "summary": "Use ...Nc6, ...Nf6 and ...d6, then develop the bishop and castle. Learn a sound setup against Be2 without treating it as an answer to every White system.",
+      "keyIdeas": [
+        "...Nf6 attacks e4; ...d6 controls e5 and opens the c8 bishop's diagonal.",
+        "...e6 covers d5 and prepares ...Be7, but restricts the c8 bishop and concedes some space.",
+        "White's Be2 setup is quieter than Bg5 or Bc4. Those alternatives require fresh decisions, not automatic moves."
+      ],
+      "plans": {
+        "white": "Develop the queen and rooks, assess f4 or a central advance, and keep d4 and e4 sufficiently defended.",
+        "black": "Consider ...Bd7, ...Qc7 and ...Rc8 as the position allows. The freeing ...d5 break needs enough support; do not weaken d6 or expose the king to force it."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "White claims central space and opens the f1 bishop."
+        },
+        {
+          "san": "c5",
+          "note": "Controls d4 with a flank pawn. Black creates an asymmetric position rather than matching e4 with ...e5."
+        },
+        {
+          "san": "Nf3",
+          "note": "Develops toward the center and prepares d4."
+        },
+        {
+          "san": "Nc6",
+          "note": "Develops the b8 knight and adds control of d4. This move order also allows White's Bb5 Rossolimo."
+        },
+        {
+          "san": "d4",
+          "note": "White challenges the center, offering a central pawn for Black's c-pawn."
+        },
+        {
+          "san": "cxd4",
+          "note": "Exchanges the c-pawn for White's d-pawn. Black gets a half-open c-file and retains both central pawns, while White gains room for active pieces."
+        },
+        {
+          "san": "Nxd4",
+          "note": "White recaptures with an active knight rather than bringing the queen out."
+        },
+        {
+          "san": "Nf6",
+          "note": "Develops with an attack on e4. White must account for that threat, usually by defending with Nc3."
+        },
+        {
+          "san": "Nc3",
+          "note": "Defends e4 and develops another piece. White is ready to choose a system against Black's setup."
+        },
+        {
+          "san": "d6",
+          "note": "Controls e5 and opens the c8 bishop's diagonal. Black prepares piece development while keeping the e-pawn flexible.",
+          "checkpoint": {
+            "prompt": "Before trying to use the c-file, what central square and undeveloped bishop can one pawn move help?",
+            "answer": "...d6 covers e5 and opens the c8 bishop's diagonal. Development and king safety make the later c-file pressure useful."
+          }
+        },
+        {
+          "san": "Be2",
+          "note": "White chooses a quieter developing square and prepares castling."
+        },
+        {
+          "san": "e6",
+          "note": "Covers d5 and opens the f8 bishop's route to e7. This small-center setup leaves Black flexible but temporarily restricts the c8 bishop.",
+          "comparison": {
+            "san": "g6",
+            "explanation": "6...g6 would choose a Dragon-style fianchetto. ...e6 instead supports d5 and develops the bishop through e7. Each setup has different attacking patterns; do not mix them without considering the pawn structure."
+          }
+        },
+        {
+          "san": "O-O",
+          "note": "White secures the king before central play."
+        },
+        {
+          "san": "Be7",
+          "note": "Develops the f8 bishop and clears the way to castle. The bishop is modestly placed but helps complete king safety."
+        },
+        {
+          "san": "Be3",
+          "note": "White develops the remaining bishop and connects the pieces."
+        },
+        {
+          "san": "O-O",
+          "note": "Secures the king before seeking play on the c-file or a central break."
+        }
+      ],
+      "questions": [
+        {
+          "id": "si-classical-1",
+          "moves": [
+            "e4",
+            "c5",
+            "Nf3",
+            "Nc6",
+            "d4",
+            "cxd4",
+            "Nxd4"
+          ],
+          "prompt": "White has recaptured on d4. Develop while attacking e4.",
+          "answer": "Nf6",
+          "alternatives": [
+            "d6"
+          ],
+          "hint": "The g8 knight can attack the e-pawn.",
+          "explanation": "4...Nf6 develops with a concrete threat to e4. White commonly answers Nc3. The move ...d6 is also a sound order, but does not itself attack e4.",
+          "fen": "r1bqkbnr/pp1ppppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4"
+        },
+        {
+          "id": "si-classical-2",
+          "moves": [
+            "e4",
+            "c5",
+            "Nf3",
+            "Nc6",
+            "d4",
+            "cxd4",
+            "Nxd4",
+            "Nf6",
+            "Nc3"
+          ],
+          "prompt": "White defended e4 with Nc3. Control e5 and open your c8 bishop's diagonal.",
+          "answer": "d6",
+          "alternatives": [
+            "e6"
+          ],
+          "hint": "Advance the d-pawn one square.",
+          "explanation": "5...d6 controls e5 and frees the c8 bishop. It leads to the Classical Sicilian here. ...e6 is another sound system, but changes the setup and move order.",
+          "fen": "r1bqkb1r/pp1ppppp/2n2n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 2 5"
+        },
+        {
+          "id": "si-classical-3",
+          "moves": [
+            "e4",
+            "c5",
+            "Nf3",
+            "Nc6",
+            "d4",
+            "cxd4",
+            "Nxd4",
+            "Nf6",
+            "Nc3",
+            "d6",
+            "Be2",
+            "e6",
+            "O-O"
+          ],
+          "prompt": "White has castled. Develop your f8 bishop to prepare your own castling.",
+          "answer": "Be7",
+          "alternatives": [],
+          "hint": "Use the e7 square.",
+          "explanation": "7...Be7 finishes the piece development needed for O-O. Plans involving ...Rc8 or ...d5 become safer once the king is secure.",
+          "fen": "r1bqkb1r/pp3ppp/2nppn2/8/3NP3/2N5/PPP1BPPP/R1BQ1RK1 b kq - 1 7"
+        }
+      ]
+    },
+    {
+      "id": "alapin",
+      "title": "Alapin: Challenge the Center Immediately",
+      "summary": "Against 2.c3, play ...d5 while Nc3 is unavailable. Learn why an early queen recapture is playable in this specific position.",
+      "keyIdeas": [
+        "c3 prepares d4 but occupies the knight's natural developing square.",
+        "...d5 challenges e4 before White can establish the full center unopposed.",
+        "After exd5 Qxd5, White cannot chase the queen with Nc3 while its own pawn remains on c3. That explains the timing, but does not make the queen immune to attack."
+      ],
+      "plans": {
+        "white": "Complete development, then decide how to maintain or resolve the d4/c5 tension. Look for useful attacks on the queen only when they also improve pieces.",
+        "black": "Finish development and choose the timing of ...cxd4. If White recaptures cxd4, play against the resulting isolated d-pawn without neglecting White's activity."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "White occupies the center."
+        },
+        {
+          "san": "c5",
+          "note": "Black contests d4 with the c-pawn."
+        },
+        {
+          "san": "c3",
+          "note": "Prepares d4 with pawn support but blocks the b1 knight's c3 square."
+        },
+        {
+          "san": "d5",
+          "note": "Challenges e4 immediately. Black uses the moment when White cannot develop Nc3 with an attack on a queen recapturing on d5.",
+          "comparison": {
+            "san": "Nc6",
+            "explanation": "2...Nc6 is playable, but lets White build d4 without the immediate ...d5 challenge. Our ...d5 uses the temporary absence of Nc3 to clarify the center; ...Nf6 is also a major choice."
+          }
+        },
+        {
+          "san": "exd5",
+          "note": "White exchanges the e-pawn for Black's d-pawn, opening the central files."
+        },
+        {
+          "san": "Qxd5",
+          "note": "Restores material with the queen. Nc3 cannot currently gain time against her because White's c-pawn occupies c3.",
+          "checkpoint": {
+            "prompt": "Why is a queen recapture on d5 less exposed here than after White has already played Nc3?",
+            "answer": "White's own c3 pawn blocks Nb1–c3. Black can restore material with ...Qxd5 without allowing that developing attack immediately."
+          }
+        },
+        {
+          "san": "d4",
+          "note": "White gains central space and attacks c5, completing the point of c3."
+        },
+        {
+          "san": "Nf6",
+          "note": "Develops a knight, controls d5 and e4, and prepares castling. Black can keep central pawn tension for now."
+        },
+        {
+          "san": "Nf3",
+          "note": "White develops and prepares castling while the central pawns remain in tension."
+        },
+        {
+          "san": "e6",
+          "note": "Releases the f8 bishop and covers d5. The queen on d5 defends c5; the e6 pawn itself does not. Black chooses a solid development setup."
+        },
+        {
+          "san": "Be2",
+          "note": "White clears f1 for castling and supports a safe central buildup."
+        },
+        {
+          "san": "Be7",
+          "note": "Develops the bishop and makes castling available."
+        },
+        {
+          "san": "O-O",
+          "note": "White secures the king."
+        },
+        {
+          "san": "O-O",
+          "note": "Black also secures the king; future ...cxd4 exchanges can change the pawn structure."
+        }
+      ],
+      "questions": [
+        {
+          "id": "si-alapin-1",
+          "moves": [
+            "e4",
+            "c5",
+            "c3"
+          ],
+          "prompt": "White's c3 prepares d4 but blocks Nc3. Challenge e4 right away.",
+          "answer": "d5",
+          "alternatives": [
+            "Nf6"
+          ],
+          "hint": "Push the d-pawn two squares.",
+          "explanation": "2...d5 attacks e4 immediately. After exd5, ...Qxd5 is viable because White cannot develop Nc3 while c3 is occupied. ...Nf6 is another major Alapin response.",
+          "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2"
+        },
+        {
+          "id": "si-alapin-2",
+          "moves": [
+            "e4",
+            "c5",
+            "c3",
+            "d5",
+            "exd5"
+          ],
+          "prompt": "White exchanged on d5. Recover the pawn without moving either knight.",
+          "answer": "Qxd5",
+          "alternatives": [],
+          "hint": "The queen has a clear d-file.",
+          "explanation": "3...Qxd5 restores material. Unlike many early queen moves, it cannot be chased immediately by Nc3 because White's c-pawn is on c3. Continue development and remain alert to later queen attacks.",
+          "fen": "rnbqkbnr/pp2pppp/8/2pP4/8/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 3"
+        },
+        {
+          "id": "si-alapin-3",
+          "moves": [
+            "e4",
+            "c5",
+            "c3",
+            "d5",
+            "exd5",
+            "Qxd5",
+            "d4",
+            "Nf6",
+            "Nf3"
+          ],
+          "prompt": "After both kingside knights develop, cover d5 and release the f8 bishop.",
+          "answer": "e6",
+          "alternatives": [],
+          "hint": "Use the e-pawn.",
+          "explanation": "5...e6 opens the f8 bishop and covers d5. It does not defend c5: the queen on d5 does that. Black prepares ...Be7 and castling before deciding when to exchange on d4.",
+          "fen": "rnb1kb1r/pp2pppp/5n2/2pq4/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5"
+        }
+      ]
+    },
+    {
+      "id": "closed",
+      "title": "Closed Sicilian: Develop Before Expanding",
+      "summary": "Against Nc3 and g3, develop with a kingside fianchetto. White has postponed d4, so adapt to a slower struggle.",
+      "keyIdeas": [
+        "Nc3 does not force a closed game: White can still play d4 later. Read the next moves.",
+        "...g6 and ...Bg7 develop the bishop on a long diagonal; ...d6 supports c5 and opens Bc8.",
+        "Queenside expansion with ...b5 needs preparation and timing. White's f4 can start kingside play while Black develops."
+      ],
+      "plans": {
+        "white": "Use the extra kingside space to improve the pieces and assess f5. If d4 becomes attractive, calculate how opening the center changes the bishops' activity.",
+        "black": "Develop Bc8, consider ...Rb8 and a supported ...b5, and watch White's f5 ideas. A timely ...d5 can challenge the center, but needs preparation."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "White takes central space."
+        },
+        {
+          "san": "c5",
+          "note": "Black contests d4 from the flank."
+        },
+        {
+          "san": "Nc3",
+          "note": "White develops and keeps the option of either d4 or a slower closed setup."
+        },
+        {
+          "san": "Nc6",
+          "note": "Develops and reinforces d4. Black does not yet have to commit the e-pawn."
+        },
+        {
+          "san": "g3",
+          "note": "White prepares Bg2, signaling a slower kingside fianchetto."
+        },
+        {
+          "san": "g6",
+          "note": "Prepares ...Bg7 so the bishop can influence the long diagonal toward the queenside."
+        },
+        {
+          "san": "Bg2",
+          "note": "White places the bishop on the long diagonal behind the e4 pawn."
+        },
+        {
+          "san": "Bg7",
+          "note": "Develops the bishop and clears f8 for castling once the knight moves. The diagonal may open as the central pawns change."
+        },
+        {
+          "san": "d3",
+          "note": "Supports e4 and releases White's c1 bishop."
+        },
+        {
+          "san": "d6",
+          "note": "Supports c5 and opens Black's c8 bishop's diagonal. Black keeps a firm grip on the flank pawn before expanding."
+        },
+        {
+          "san": "f4",
+          "note": "White gains kingside space and may prepare f5. Black needs counterplay as well as king safety."
+        },
+        {
+          "san": "e6",
+          "note": "Covers d5 and clears e7 for the g8 knight. The cost is restricting the c8 bishop again until the pawn structure opens."
+        },
+        {
+          "san": "Nf3",
+          "note": "White develops toward castling and reinforces the center."
+        },
+        {
+          "san": "Nge7",
+          "note": "Develops to e7, keeping the g7–f6–e5 diagonal free of a knight on f6. It also leaves the f-pawn available; assess tactics before advancing it.",
+          "comparison": {
+            "san": "Nf6",
+            "explanation": "7...Nf6 is natural and sound. Nge7 keeps f6 clear and avoids giving a future e5 advance a knight target on f6. The tradeoff is a more modest knight square."
+          },
+          "checkpoint": {
+            "prompt": "Which knight move prepares castling without giving White's future e5 advance a target on f6?",
+            "answer": "...Nge7 develops and keeps the f-pawn flexible. It is a setup choice, not a claim that ...Nf6 loses."
+          }
+        },
+        {
+          "san": "O-O",
+          "note": "White secures the king and may continue a kingside buildup."
+        },
+        {
+          "san": "O-O",
+          "note": "Black secures the king. Queenside play must now be coordinated with the pieces rather than launched automatically."
+        }
+      ],
+      "questions": [
+        {
+          "id": "si-closed-1",
+          "moves": [
+            "e4",
+            "c5",
+            "Nc3",
+            "Nc6",
+            "g3"
+          ],
+          "prompt": "White prepares Bg2. Prepare your own bishop for the long diagonal.",
+          "answer": "g6",
+          "alternatives": [
+            "e6"
+          ],
+          "hint": "Move the g-pawn one square.",
+          "explanation": "3...g6 prepares ...Bg7, choosing a coordinated fianchetto setup. ...e6 is also sound but would lead to a different development plan.",
+          "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/2N3P1/PPPP1P1P/R1BQKBNR b KQkq - 0 3"
+        },
+        {
+          "id": "si-closed-2",
+          "moves": [
+            "e4",
+            "c5",
+            "Nc3",
+            "Nc6",
+            "g3",
+            "g6",
+            "Bg2"
+          ],
+          "prompt": "Your bishop's path is open. Complete the fianchetto.",
+          "answer": "Bg7",
+          "alternatives": [],
+          "hint": "Move Bf8 to g7.",
+          "explanation": "4...Bg7 develops the bishop toward the queenside and prepares king safety. The bishop's scope depends on central pawn exchanges; it is not a ready-made attack.",
+          "fen": "r1bqkbnr/pp1ppp1p/2n3p1/2p5/4P3/2N3P1/PPPP1PBP/R1BQK1NR b KQkq - 1 4"
+        },
+        {
+          "id": "si-closed-3",
+          "moves": [
+            "e4",
+            "c5",
+            "Nc3",
+            "Nc6",
+            "g3",
+            "g6",
+            "Bg2",
+            "Bg7",
+            "d3",
+            "d6",
+            "f4",
+            "e6",
+            "Nf3"
+          ],
+          "prompt": "With e7 available, develop the g8 knight to keep the f-pawn flexible.",
+          "answer": "Nge7",
+          "alternatives": [
+            "Nf6"
+          ],
+          "hint": "Use e7 rather than f6 in this setup.",
+          "explanation": "7...Nge7 prepares castling and leaves the f-pawn free. ...Nf6 is another sound setup, but can face e5 with tempo when White has prepared it.",
+          "fen": "r1bqk1nr/pp3pbp/2npp1p1/2p5/4PP2/2NP1NP1/PPP3BP/R1BQK2R b KQkq - 1 7"
+        }
+      ]
+    },
+    {
+      "id": "rossolimo",
+      "title": "Rossolimo: The Bishop Pair Has a Cost",
+      "summary": "Meet 3.Bb5 with ...g6. If White exchanges on c6, understand the doubled pawns and bishop pair instead of calling either an automatic advantage.",
+      "keyIdeas": [
+        "Bb5 is a response to the ...Nc6 move order. It is not the Open Sicilian, so White need not play d4.",
+        "After Bxc6 dxc6, Black has doubled c-pawns and the bishop pair. Open lines can help the bishops; pawn weaknesses can help White.",
+        "...dxc6 opens the c8 bishop's diagonal and the d-file. The remaining c5 pawn still contests d4."
+      ],
+      "plans": {
+        "white": "Develop Bc1 and Nb1, assess the timing of d4, and pressure the doubled pawns without underestimating Black's bishops.",
+        "black": "Develop Bc8 and seek active lines for both bishops. Keep c5 defended and consider central exchanges before White fixes the queenside weaknesses."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "White occupies e4 and opens the bishop's diagonal."
+        },
+        {
+          "san": "c5",
+          "note": "Black controls d4 with a flank pawn."
+        },
+        {
+          "san": "Nf3",
+          "note": "White develops and prepares central play."
+        },
+        {
+          "san": "Nc6",
+          "note": "Develops and controls d4, allowing White to choose the Bb5 Rossolimo."
+        },
+        {
+          "san": "Bb5",
+          "note": "Attacks Nc6 and offers a structural decision: preserve the knight or allow bishop-for-knight exchange."
+        },
+        {
+          "san": "g6",
+          "note": "Prepares the f8 bishop's fianchetto rather than spending time defending the knight with a pawn move."
+        },
+        {
+          "san": "Bxc6",
+          "note": "White gives up the bishop pair to damage Black's queenside pawns."
+        },
+        {
+          "san": "dxc6",
+          "note": "Recaptures with the d-pawn, opening the c8 bishop's diagonal and d-file. Black accepts doubled c-pawns in exchange for the two bishops.",
+          "comparison": {
+            "san": "bxc6",
+            "explanation": "4...bxc6 is playable too: it keeps the d-pawn and opens the b-file, but gives a different structure. Our ...dxc6 opens Bc8's diagonal immediately and is chosen for that plan."
+          },
+          "checkpoint": {
+            "prompt": "What do you gain and concede by recapturing on c6 with the d-pawn?",
+            "answer": "Black keeps two bishops and opens Bc8's diagonal, but accepts doubled c-pawns. Plan around both features rather than assuming the exchange favored one side automatically."
+          }
+        },
+        {
+          "san": "d3",
+          "note": "Supports e4 and opens White's remaining bishop."
+        },
+        {
+          "san": "Bg7",
+          "note": "Develops the bishop toward the center and queenside. Black should seek positions where the bishop pair has room."
+        },
+        {
+          "san": "O-O",
+          "note": "White secures the king before building pressure against the pawns."
+        },
+        {
+          "san": "Nf6",
+          "note": "Develops and attacks e4, which d3 already defends. Black is completing king safety rather than winning a pawn by force."
+        },
+        {
+          "san": "Re1",
+          "note": "White reinforces e4 and places a rook on a central file."
+        },
+        {
+          "san": "O-O",
+          "note": "Secures the king. Now Black can develop the c8 bishop and coordinate counterplay."
+        }
+      ],
+      "questions": [
+        {
+          "id": "si-rossolimo-1",
+          "moves": [
+            "e4",
+            "c5",
+            "Nf3",
+            "Nc6",
+            "Bb5"
+          ],
+          "prompt": "White chose Bb5 instead of d4. Prepare a kingside fianchetto.",
+          "answer": "g6",
+          "alternatives": [
+            "e6"
+          ],
+          "hint": "The g-pawn can open g7 for the bishop.",
+          "explanation": "3...g6 prepares ...Bg7 and accepts that White may exchange on c6. ...e6 is also a sound Rossolimo setup; do not automatically copy an Open Sicilian line.",
+          "fen": "r1bqkbnr/pp1ppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"
+        },
+        {
+          "id": "si-rossolimo-2",
+          "moves": [
+            "e4",
+            "c5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "g6",
+            "Bxc6"
+          ],
+          "prompt": "White traded its bishop for Nc6. Recapture with the d-pawn to open Bc8's diagonal.",
+          "answer": "dxc6",
+          "alternatives": [
+            "bxc6"
+          ],
+          "hint": "The d7 pawn can capture c6.",
+          "explanation": "4...dxc6 accepts doubled c-pawns and preserves the bishop pair. ...bxc6 is also playable but gives a different pawn structure. Neither doubled pawns nor two bishops decide the game alone.",
+          "fen": "r1bqkbnr/pp1ppp1p/2B3p1/2p5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 4"
+        },
+        {
+          "id": "si-rossolimo-3",
+          "moves": [
+            "e4",
+            "c5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "g6",
+            "Bxc6",
+            "dxc6",
+            "d3"
+          ],
+          "prompt": "You prepared g7 for the f8 bishop. Develop it now.",
+          "answer": "Bg7",
+          "alternatives": [],
+          "hint": "Complete the fianchetto.",
+          "explanation": "5...Bg7 develops a bishop rather than spending more time on pawns. The bishop pair needs open lines and coordinated pieces to become useful.",
+          "fen": "r1bqkbnr/pp2pp1p/2p3p1/2p5/4P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 5"
+        }
+      ]
+    }
+  ]
+}

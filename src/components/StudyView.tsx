@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Chess } from 'chess.js';
 import { Board } from './Board';
+import { MoveExplanation } from './MoveExplanation';
 import { progress } from '../lib/progress';
 import type { Chunk, Opening } from '../lib/types';
 
@@ -48,7 +49,7 @@ export function StudyView({ opening, chunk, onDrill, onQuiz, onExit }: Props) {
   }, [total]);
 
   const cur = positions[ply];
-  const note = ply > 0 ? chunk.line[ply - 1].note : undefined;
+  const checkpoint = chunk.line[ply]?.checkpoint;
 
   return (
     <div className="session">
@@ -62,24 +63,36 @@ export function StudyView({ opening, chunk, onDrill, onQuiz, onExit }: Props) {
         <div className="panel">
           <h2>{chunk.title}</h2>
           <p>{chunk.summary}</p>
-          <div className="note">
+          <div className="note" aria-live="polite">
             {ply === 0 ? (
               <span className="muted">Step through the line with → or the buttons below.</span>
             ) : (
               <>
-                <b>{moveLabel(ply - 1, chunk.line[ply - 1].san)}</b> {note ?? ''}
+                <b>{moveLabel(ply - 1, chunk.line[ply - 1].san)}</b>
+                <MoveExplanation move={chunk.line[ply - 1]} />
               </>
             )}
           </div>
+          {checkpoint && (
+            <div className="checkpoint" key={ply}>
+              <h3>Think first</h3>
+              <p>{checkpoint.prompt}</p>
+              <details>
+                <summary>Reveal reasoning</summary>
+                <p>{checkpoint.answer}</p>
+              </details>
+              <p className="muted small">Explain your choice to yourself, then play the next move. This is practice, not graded.</p>
+            </div>
+          )}
           <div className="actions">
-            <button className="secondary" onClick={() => setPly(0)} disabled={ply === 0}>⏮</button>
+            <button className="secondary" aria-label="Return to starting position" onClick={() => setPly(0)} disabled={ply === 0}>⏮</button>
             <button className="secondary" onClick={() => setPly((p) => p - 1)} disabled={ply === 0}>◀ Back</button>
             <button onClick={() => setPly((p) => p + 1)} disabled={ply === total}>Next ▶</button>
           </div>
           <ol className="movelist">
             {chunk.line.map((m, i) => (
               <li key={i}>
-                <button className={`mv ${i === ply - 1 ? 'active' : ''} ${m.note ? 'noted' : ''}`} onClick={() => setPly(i + 1)}>
+                <button aria-current={i === ply - 1 ? 'step' : undefined} className={`mv ${i === ply - 1 ? 'active' : ''} ${m.note ? 'noted' : ''}`} onClick={() => setPly(i + 1)}>
                   {moveLabel(i, m.san)}
                 </button>
               </li>
@@ -89,6 +102,13 @@ export function StudyView({ opening, chunk, onDrill, onQuiz, onExit }: Props) {
           <ul className="ideas">
             {chunk.keyIdeas.map((k) => <li key={k}>{k}</li>)}
           </ul>
+          {chunk.plans && (
+            <div className="plans">
+              <h3>Plans after this line</h3>
+              <p><b>White:</b> {chunk.plans.white}</p>
+              <p><b>Black:</b> {chunk.plans.black}</p>
+            </div>
+          )}
           {ply === total && (
             <div className="next-steps">
               <p>Line complete. Now test your recall:</p>

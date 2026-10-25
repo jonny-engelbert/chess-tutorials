@@ -1,0 +1,560 @@
+{
+  "id": "ruy-lopez",
+  "name": "Ruy López",
+  "eco": "C60–C99",
+  "side": "white",
+  "summary": "Use 1.e4 e5 2.Nf3 Nc6 3.Bb5 to pressure the defender of e5. Learn patient central play against the Morphy, Berlin and Steinitz defenses, with a practical plan for each.",
+  "sources": [
+    {
+      "title": "Chess.com: Ruy López overview",
+      "url": "https://www.chess.com/openings/Ruy-Lopez-Opening"
+    },
+    {
+      "title": "Chess.com: Berlin Defense",
+      "url": "https://www.chess.com/openings/Ruy-Lopez-Opening-Berlin-Defense"
+    },
+    {
+      "title": "Chess.com: Old Steinitz Defense",
+      "url": "https://www.chess.com/openings/Ruy-Lopez-Opening-Old-Steinitz-Defense"
+    }
+  ],
+  "chunks": [
+    {
+      "id": "intro",
+      "title": "Introduction: Pressure the Defender",
+      "summary": "The bishop attacks e5's defender rather than aiming straight at f7. Learn why this creates useful pressure without winning a pawn immediately.",
+      "keyIdeas": [
+        "Bb5 attacks Nc6, but before ...d6 this knight is not pinned: moving it does not expose the king on e8.",
+        "Bxc6 followed by Nxe5 does not simply win a pawn: after ...dxc6 and Nxe5, ...Qd4 attacks the knight and e4.",
+        "Develop and castle, then build the center. White can maintain pressure without exchanging the bishop immediately."
+      ],
+      "plans": {
+        "white": "Castle, support e4 and prepare c3 and d4 when appropriate. Respond to Black's chosen defense before following a memorized setup.",
+        "black": "Defend the center through development. Choose ...a6 to question the bishop, ...Nf6 to attack e4 or ...d6 to reinforce e5."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "Claim e4, control d5 and open the f1 bishop's diagonal."
+        },
+        {
+          "san": "e5",
+          "note": "Black matches the central claim and frees the f8 bishop."
+        },
+        {
+          "san": "Nf3",
+          "note": "Develop with an attack on e5. The knight also controls d4 and clears g1 for castling."
+        },
+        {
+          "san": "Nc6",
+          "note": "Defend e5 while developing a knight toward the center."
+        },
+        {
+          "san": "Bb5",
+          "note": "Attack Nc6, the defender of e5, and clear f1 for castling. This is indirect pressure: taking on c6 and e5 immediately does not simply win a pawn.",
+          "comparison": {
+            "san": "Bc4",
+            "explanation": "3.Bc4 starts the Italian, targeting f7 and controlling d5. Bb5 challenges the c6 knight instead. This is a choice of plan, not proof that one opening is universally better."
+          },
+          "checkpoint": {
+            "prompt": "Can pressure on Nc6 win e5 immediately by exchanging the bishop?",
+            "answer": "Not automatically. After Bxc6 dxc6 Nxe5, ...Qd4 attacks the knight and e4, so White cannot count on keeping an extra pawn."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "rl-intro-1",
+          "moves": [],
+          "prompt": "Start this 1.e4 repertoire.",
+          "answer": "e4",
+          "alternatives": [],
+          "hint": "Use the king's pawn to claim space.",
+          "explanation": "1.e4 occupies the center and opens the f1 bishop. The intended Spanish setup follows with Nf3 and Bb5 after ...e5 and ...Nc6.",
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+        },
+        {
+          "id": "rl-intro-2",
+          "moves": [
+            "e4",
+            "e5"
+          ],
+          "prompt": "Develop with an attack on Black's central pawn.",
+          "answer": "Nf3",
+          "alternatives": [],
+          "hint": "The g1 knight can attack e5.",
+          "explanation": "2.Nf3 attacks e5 while developing toward the center and preparing castling.",
+          "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+        },
+        {
+          "id": "rl-intro-3",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6"
+          ],
+          "prompt": "Attack the knight that defends e5 to start the Ruy López.",
+          "answer": "Bb5",
+          "alternatives": [
+            "Bc4"
+          ],
+          "hint": "Develop the f1 bishop to b5.",
+          "explanation": "3.Bb5 pressures Nc6. Bc4 is the sound Italian alternative, aimed at f7; Bb5 instead attacks a defender of the center.",
+          "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+        }
+      ]
+    },
+    {
+      "id": "morphy",
+      "title": "Morphy Defense: Keep the Bishop Active",
+      "summary": "Against 3...a6, retreat the bishop and follow a Closed Spanish setup. Understand why retreating can preserve useful pressure.",
+      "keyIdeas": [
+        "...a6 asks whether White will exchange bishop for knight. Ba4 preserves the bishop; Bxc6 is a sound but different structure.",
+        "After ...b5, Bb3 keeps the bishop on the a2–g8 diagonal while staying safe.",
+        "Re1 supports e4; c3 prepares d4. Black's ...d6 and castling support a continuing central struggle."
+      ],
+      "plans": {
+        "white": "Develop Nb1, often through d2, and prepare d4. Consider Bc2 and central piece coordination before attacking the king.",
+        "black": "Improve the pieces, challenge the center and consider ...Na5 against Bb3. A later ...d5 break, including Marshall-style ideas in other move orders, needs calculation."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "Claim e4, control d5 and open the f1 bishop's diagonal."
+        },
+        {
+          "san": "e5",
+          "note": "Black matches the central claim and frees the f8 bishop."
+        },
+        {
+          "san": "Nf3",
+          "note": "Develop with an attack on e5. The knight also controls d4 and clears g1 for castling."
+        },
+        {
+          "san": "Nc6",
+          "note": "Defend e5 while developing a knight toward the center."
+        },
+        {
+          "san": "Bb5",
+          "note": "Attack Nc6, the defender of e5, and clear f1 for castling. This is indirect pressure: taking on c6 and e5 immediately does not simply win a pawn."
+        },
+        {
+          "san": "a6",
+          "note": "Questions the bishop before committing the kingside pieces. It also prepares a possible ...b5 expansion."
+        },
+        {
+          "san": "Ba4",
+          "note": "Retreats without giving up the bishop pair. The bishop still attacks Nc6 along the diagonal.",
+          "comparison": {
+            "san": "Bxc6",
+            "explanation": "4.Bxc6 is a respected alternative, exchanging the bishop pair for a changed pawn structure. Ba4 keeps the bishop and continued central pressure; it does not claim a material win."
+          }
+        },
+        {
+          "san": "Nf6",
+          "note": "Develops and attacks e4. White will need concrete central support or tactical recovery."
+        },
+        {
+          "san": "O-O",
+          "note": "Secures the king. The Open Spanish with ...Nxe4 is possible; this lesson follows Black's quieter ...Be7 choice."
+        },
+        {
+          "san": "Be7",
+          "note": "Prepares castling and chooses the Closed Spanish structure rather than taking e4 immediately."
+        },
+        {
+          "san": "Re1",
+          "note": "Defends e4 with the rook. White can now build the center without relying only on tactics to protect that pawn.",
+          "checkpoint": {
+            "prompt": "Black's knight attacks e4 and has declined to capture it so far. How can White defend it with a rook?",
+            "answer": "Re1 supports e4. It turns a tactical defense into a straightforward one and helps prepare a later d4 break."
+          }
+        },
+        {
+          "san": "b5",
+          "note": "Gains queenside space while attacking the bishop. Black uses a pawn move with tempo rather than a random expansion."
+        },
+        {
+          "san": "Bb3",
+          "note": "Preserves the bishop on an active diagonal. It still looks toward f7, even though it has moved several times."
+        },
+        {
+          "san": "d6",
+          "note": "Supports e5 and opens the c8 bishop. Black strengthens the central foothold rather than leaving its defense entirely to Nc6."
+        },
+        {
+          "san": "c3",
+          "note": "Prepares d4 with pawn support and leaves c2 available as a bishop retreat if needed."
+        },
+        {
+          "san": "O-O",
+          "note": "Black secures the king and prepares to meet White's central expansion."
+        },
+        {
+          "san": "h3",
+          "note": "Controls g4 so Black cannot easily pin Nf3 with ...Bg4 when White plays d4. It costs a tempo, so keep watching Black's central options."
+        }
+      ],
+      "questions": [
+        {
+          "id": "rl-morphy-1",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "a6"
+          ],
+          "prompt": "Black attacks your bishop with ...a6. Preserve it while maintaining pressure on Nc6.",
+          "answer": "Ba4",
+          "alternatives": [
+            "Bxc6"
+          ],
+          "hint": "Retreat along the diagonal to a4.",
+          "explanation": "4.Ba4 keeps the bishop pair and pressure on Nc6. 4.Bxc6 is a sound Exchange Variation, but trades the bishop for a different pawn structure.",
+          "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+        },
+        {
+          "id": "rl-morphy-2",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "a6",
+            "Ba4",
+            "Nf6",
+            "O-O",
+            "Be7"
+          ],
+          "prompt": "Black chose ...Be7 instead of capturing e4. Add a rook defender to e4.",
+          "answer": "Re1",
+          "alternatives": [
+            "d3"
+          ],
+          "hint": "The f1 rook can support the e-pawn.",
+          "explanation": "6.Re1 protects e4 and prepares central play. Developing the rook has a concrete defensive purpose, not just a generic centralizing one.",
+          "fen": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 6"
+        },
+        {
+          "id": "rl-morphy-3",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "a6",
+            "Ba4",
+            "Nf6",
+            "O-O",
+            "Be7",
+            "Re1",
+            "b5"
+          ],
+          "prompt": "Black's ...b5 attacks your bishop. Keep it on the diagonal toward f7.",
+          "answer": "Bb3",
+          "alternatives": [],
+          "hint": "The bishop on a4 can retreat to b3.",
+          "explanation": "7.Bb3 preserves the bishop. Exchanging on c6 now would allow ...dxc6, changing the structure; retreating keeps the Closed Spanish plan.",
+          "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 w kq - 0 7"
+        }
+      ]
+    },
+    {
+      "id": "berlin",
+      "title": "Berlin Defense: A Supported Anti-Berlin",
+      "summary": "Black's 3...Nf6 attacks e4. Choose 4.d3 to support the pawn and keep a middlegame, rather than entering the main queenless Berlin line.",
+      "keyIdeas": [
+        "...Nf6 is active development with a threat to e4, not a passive attempt to defend e5.",
+        "d3 supports e4 and opens the c1 bishop. Castling immediately is also sound, but permits ...Nxe4 and different tactical lines.",
+        "After ...Bc5, c3 and d4 can challenge the center. Do not confuse this bishop on b5 with the Italian bishop on c4."
+      ],
+      "plans": {
+        "white": "Develop Nb1 and Bc1, prepare d4 and consider whether exchanging on c6 helps your specific position.",
+        "black": "Develop the c8 bishop, connect the rooks and prepare ...d5 when possible. Watch White's central expansion."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "Claim e4, control d5 and open the f1 bishop's diagonal."
+        },
+        {
+          "san": "e5",
+          "note": "Black matches the central claim and frees the f8 bishop."
+        },
+        {
+          "san": "Nf3",
+          "note": "Develop with an attack on e5. The knight also controls d4 and clears g1 for castling."
+        },
+        {
+          "san": "Nc6",
+          "note": "Defend e5 while developing a knight toward the center."
+        },
+        {
+          "san": "Bb5",
+          "note": "Attack Nc6, the defender of e5, and clear f1 for castling. This is indirect pressure: taking on c6 and e5 immediately does not simply win a pawn."
+        },
+        {
+          "san": "Nf6",
+          "note": "Develops and attacks e4 directly. This is the Berlin Defense, and White must choose how to handle the threat."
+        },
+        {
+          "san": "d3",
+          "note": "Defends e4 and opens the c1 bishop's diagonal. This Anti-Berlin approach keeps the central pawn in place.",
+          "comparison": {
+            "san": "O-O",
+            "explanation": "4.O-O is a main line, not a mistake. After ...Nxe4, White uses central tactics rather than simple pawn protection. Our 4.d3 keeps a supported center and avoids that additional theory."
+          },
+          "checkpoint": {
+            "prompt": "How can you answer the attack on e4 without entering ...Nxe4 lines?",
+            "answer": "Play d3. It protects e4 with a pawn and gives Bc1 room to develop; immediate castling is another sound choice but leads to different positions."
+          }
+        },
+        {
+          "san": "Bc5",
+          "note": "Develops actively toward f2, adding pressure along the a7–g1 diagonal."
+        },
+        {
+          "san": "O-O",
+          "note": "Secures the king with e4 already defended by d3."
+        },
+        {
+          "san": "d6",
+          "note": "Supports e5 and opens the c8 bishop. Black now has a firm center but still needs to develop the queenside."
+        },
+        {
+          "san": "c3",
+          "note": "Prepares d4 with support. White does not have to trade on c6 to justify Bb5."
+        },
+        {
+          "san": "O-O",
+          "note": "Black secures the king before central play."
+        },
+        {
+          "san": "Re1",
+          "note": "Adds another defender to e4 and puts the rook on a central file. White can continue development and assess d4."
+        }
+      ],
+      "questions": [
+        {
+          "id": "rl-berlin-1",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "Nf6"
+          ],
+          "prompt": "The Berlin knight attacks e4. Keep a supported center with the Anti-Berlin pawn move.",
+          "answer": "d3",
+          "alternatives": [
+            "O-O",
+            "Nc3"
+          ],
+          "hint": "Use the d-pawn to defend e4.",
+          "explanation": "4.d3 protects e4 and opens Bc1. 4.O-O is equally sound but allows ...Nxe4 and the main Berlin's tactical and queenless lines.",
+          "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+        },
+        {
+          "id": "rl-berlin-2",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "Nf6",
+            "d3",
+            "Bc5"
+          ],
+          "prompt": "Your center is supported. Bring the king to safety.",
+          "answer": "O-O",
+          "alternatives": [],
+          "hint": "The path to g1 is clear.",
+          "explanation": "5.O-O lets White prepare central play with the king secured. There is no need to force a bishop exchange just because Black attacked e4 earlier.",
+          "fen": "r1bqk2r/pppp1ppp/2n2n2/1Bb1p3/4P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 1 5"
+        },
+        {
+          "id": "rl-berlin-3",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "Nf6",
+            "d3",
+            "Bc5",
+            "O-O",
+            "d6"
+          ],
+          "prompt": "Prepare to challenge Black's e5 pawn with d4 later.",
+          "answer": "c3",
+          "alternatives": [
+            "Nc3",
+            "Re1"
+          ],
+          "hint": "Support d4 using the c-pawn.",
+          "explanation": "6.c3 prepares d4 while preserving the bishop. Nc3 is also natural, but blocks this particular pawn preparation.",
+          "fen": "r1bqk2r/ppp2ppp/2np1n2/1Bb1p3/4P3/3P1N2/PPP2PPP/RNBQ1RK1 w kq - 0 6"
+        }
+      ]
+    },
+    {
+      "id": "steinitz",
+      "title": "Steinitz Defense: Use Your Space",
+      "summary": "Against 3...d6, open the center with d4, recapture actively, then finish development. Black is solid but has less room.",
+      "keyIdeas": [
+        "...d6 defends e5 but restricts the f8 bishop until it develops through e7 or g7.",
+        "d4 challenges the center while White's pieces are ready for central exchanges.",
+        "...Bd7 breaks the pin on Nc6. Before capturing, notice which pins have disappeared."
+      ],
+      "plans": {
+        "white": "Develop Bc1 and coordinate the rooks. Keep an eye on e4 and use the active Nd4 to influence central squares.",
+        "black": "Improve the remaining pieces and look for a supported ...d5 to reduce White's space. Exchanges can ease the cramped position."
+      },
+      "line": [
+        {
+          "san": "e4",
+          "note": "Claim e4, control d5 and open the f1 bishop's diagonal."
+        },
+        {
+          "san": "e5",
+          "note": "Black matches the central claim and frees the f8 bishop."
+        },
+        {
+          "san": "Nf3",
+          "note": "Develop with an attack on e5. The knight also controls d4 and clears g1 for castling."
+        },
+        {
+          "san": "Nc6",
+          "note": "Defend e5 while developing a knight toward the center."
+        },
+        {
+          "san": "Bb5",
+          "note": "Attack Nc6, the defender of e5, and clear f1 for castling. This is indirect pressure: taking on c6 and e5 immediately does not simply win a pawn."
+        },
+        {
+          "san": "d6",
+          "note": "Reinforces e5 with a pawn. The d7 square is vacated, so the bishop on b5 now pins Nc6 to the king on e8."
+        },
+        {
+          "san": "d4",
+          "note": "Challenges e5 and claims more space. White's developing pieces can use the opened central squares."
+        },
+        {
+          "san": "Bd7",
+          "note": "Interposes the c8 bishop on d7, breaking the pin on Nc6 and connecting the queen to the center."
+        },
+        {
+          "san": "Nc3",
+          "note": "Develops the remaining knight and defends e4. White can meet a central exchange with an active recapture.",
+          "checkpoint": {
+            "prompt": "After ...Bd7, is Black's c6 knight still pinned to the king?",
+            "answer": "No. The bishop on d7 blocks the b5–e8 diagonal. White should develop with Nc3 and calculate with Black's knight free to move."
+          }
+        },
+        {
+          "san": "exd4",
+          "note": "Black relieves some central tension by exchanging e5 for d4."
+        },
+        {
+          "san": "Nxd4",
+          "note": "Recaptures in the center with a knight, keeping the queen unexposed. The knight controls c6, e6 and f5.",
+          "comparison": {
+            "san": "Qxd4",
+            "explanation": "6.Qxd4? loses the queen to ...Nxd4 from the c6 knight. Nxd4 restores material with a minor piece instead. Notice that ...Bd7 has already broken the pin, so Nc6 is free to capture."
+          }
+        },
+        {
+          "san": "Nf6",
+          "note": "Develops and attacks e4. Black seeks active piece play despite the more compact structure."
+        },
+        {
+          "san": "O-O",
+          "note": "Secures the king and brings a rook toward the center. Nc3 already defends e4."
+        },
+        {
+          "san": "Be7",
+          "note": "Develops the f8 bishop and prepares castling. Black needs to finish development before further central operations."
+        },
+        {
+          "san": "Re1",
+          "note": "Reinforces e4 and coordinates the rook with central pieces."
+        },
+        {
+          "san": "O-O",
+          "note": "Completes Black's king safety. White should convert space into piece activity, not assume a forced attack."
+        }
+      ],
+      "questions": [
+        {
+          "id": "rl-steinitz-1",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "d6"
+          ],
+          "prompt": "Black defended e5 with ...d6. Claim space and challenge the center.",
+          "answer": "d4",
+          "alternatives": [
+            "O-O"
+          ],
+          "hint": "Push the d-pawn two squares.",
+          "explanation": "4.d4 opens a central contest while White can develop quickly. Castling is sound too; d4 immediately uses the opportunity to gain space.",
+          "fen": "r1bqkbnr/ppp2ppp/2np4/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+        },
+        {
+          "id": "rl-steinitz-2",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "d6",
+            "d4",
+            "Bd7"
+          ],
+          "prompt": "Black's ...Bd7 broke the pin. Defend e4 by developing your remaining knight.",
+          "answer": "Nc3",
+          "alternatives": [
+            "O-O"
+          ],
+          "hint": "The b1 knight has a central square available.",
+          "explanation": "5.Nc3 develops and protects e4. Notice that Nc6 is no longer pinned to the king after ...Bd7, so calculations must allow it to move.",
+          "fen": "r2qkbnr/pppb1ppp/2np4/1B2p3/3PP3/5N2/PPP2PPP/RNBQK2R w KQkq - 1 5"
+        },
+        {
+          "id": "rl-steinitz-3",
+          "moves": [
+            "e4",
+            "e5",
+            "Nf3",
+            "Nc6",
+            "Bb5",
+            "d6",
+            "d4",
+            "Bd7",
+            "Nc3",
+            "exd4"
+          ],
+          "prompt": "Black exchanged on d4. Restore material with your already developed knight.",
+          "answer": "Nxd4",
+          "alternatives": [],
+          "hint": "Move the f3 knight into the center.",
+          "explanation": "6.Nxd4 restores material and centralizes the knight. 6.Qxd4? loses the queen to ...Nxd4: Black's c6 knight is free to move because ...Bd7 broke the pin.",
+          "fen": "r2qkbnr/pppb1ppp/2np4/1B6/3pP3/2N2N2/PPP2PPP/R1BQK2R w KQkq - 0 6"
+        }
+      ]
+    }
+  ]
+}

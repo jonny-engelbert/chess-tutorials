@@ -20,6 +20,11 @@ const dir = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'openings
 const errors = [];
 const warnings = [];
 const ids = new Set();
+const openingIds = new Set();
+
+function requireText(value, ctx) {
+  if (typeof value !== 'string' || !value.trim()) errors.push(`${ctx}: expected nonempty text`);
+}
 
 function play(moves, ctx) {
   const chess = new Chess();
@@ -46,14 +51,36 @@ function legalSan(chess, san) {
 for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
   const path = join(dir, file);
   const opening = JSON.parse(readFileSync(path, 'utf8'));
+  if (openingIds.has(opening.id)) errors.push(`${file}: duplicate opening id "${opening.id}"`);
+  openingIds.add(opening.id);
   const turn = opening.side === 'white' ? 'w' : opening.side === 'black' ? 'b' : null;
   if (!turn) errors.push(`${file}: side must be "white" or "black"`);
   if (!opening.chunks?.length) errors.push(`${file}: no chunks`);
   let changed = false;
+  const chunkIds = new Set();
 
   for (const chunk of opening.chunks ?? []) {
     const ctx = `${opening.id}/${chunk.id}`;
+    if (chunkIds.has(chunk.id)) errors.push(`${ctx}: duplicate chunk id`);
+    chunkIds.add(chunk.id);
     play(chunk.line.map((m) => m.san), `${ctx} line`);
+    if (chunk.plans) {
+      requireText(chunk.plans.white, `${ctx} White plan`);
+      requireText(chunk.plans.black, `${ctx} Black plan`);
+    }
+    for (const [i, move] of chunk.line.entries()) {
+      if (move.checkpoint) {
+        requireText(move.checkpoint.prompt, `${ctx} move ${i + 1} checkpoint prompt`);
+        requireText(move.checkpoint.answer, `${ctx} move ${i + 1} checkpoint answer`);
+      }
+      if (move.comparison) {
+        requireText(move.comparison.explanation, `${ctx} move ${i + 1} comparison`);
+        const before = play(chunk.line.slice(0, i).map((m) => m.san), `${ctx} comparison setup`);
+        if (before && !legalSan(before, move.comparison.san)) {
+          errors.push(`${ctx} move ${i + 1}: comparison "${move.comparison.san}" is not legal before ${move.san}`);
+        }
+      }
+    }
 
     if (chunk.questions.length !== QUESTIONS_PER_CHUNK) {
       errors.push(`${ctx}: expected ${QUESTIONS_PER_CHUNK} questions, found ${chunk.questions.length}`);

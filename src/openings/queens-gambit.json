@@ -3,45 +3,57 @@
   "name": "Queen's Gambit",
   "eco": "D06–D69",
   "side": "white",
-  "summary": "White offers the c-pawn to pull Black's d-pawn away from the center. It is less a real gambit than a fight for the e4 square and the open c-file. The ideas are classical: develop quickly, claim the center, and build pressure slowly.",
+  "summary": "Challenge Black's center with 1.d4 d5 2.c4. Learn how the Accepted, Declined and Slav change your plans, when to recover a pawn, and why development matters more than a tempting capture.",
   "chunks": [
     {
       "id": "intro",
       "title": "Introduction & Main Line",
       "summary": "The core move order 1.d4 d5 2.c4 and why it works: White attacks the d5 pawn from the side and asks Black how they want to defend the center.",
       "keyIdeas": [
-        "2.c4 attacks d5 from the side. If Black takes, White can usually win the pawn back with e3 and Bxc4.",
-        "Against 2...e6 the natural development is Nc3, Nf6 and Bg5, which piles pressure on d5.",
-        "White's long-term plans are the minority attack (b4–b5), a central e4 break, or play on the half-open c-file."
+        "c4 attacks d5 with a flank pawn: exchanging it for Black's d-pawn leaves White with two central pawns against one.",
+        "Nc3 attacks d5 directly; Nf3 supports d4 and controls e5. Both develop, but they do different jobs.",
+        "Recognize Black's choice: ...dxc4 trades the center for activity, ...e6 supports d5 but blocks the c8 bishop, and ...c6 supports d5 while keeping that bishop's diagonal open."
       ],
       "line": [
         {
           "san": "d4",
-          "note": "Claims the center and frees the c1 bishop. The queen already protects d4."
+          "note": "Occupies d4, controls e5 and opens the c1 bishop's diagonal. The queen supports the pawn along the d-file."
         },
         {
           "san": "d5",
-          "note": "The classical reply. Black matches White in the center."
+          "note": "Black occupies d5 and controls e4. White needs to challenge this central foothold."
         },
         {
           "san": "c4",
-          "note": "The Queen's Gambit. It challenges d5 without blocking the c-pawn with a knight."
+          "note": "Attacks d5 with the c-pawn. If ...dxc4 follows, Black's central pawn moves away, making a later e4 easier to arrange.",
+          "comparison": {
+            "san": "Nc3",
+            "explanation": "2.Nc3 develops, but blocks your c-pawn. Playing c4 first challenges d5 immediately and keeps the Queen's Gambit structure available."
+          },
+          "checkpoint": {
+            "prompt": "What should White challenge before developing the queenside knight?",
+            "answer": "Black's d5 pawn. Play c4 first so the knight on c3 will not block this pawn break."
+          }
         },
         {
           "san": "e6",
-          "note": "The Queen's Gambit Declined. Black backs up d5 but shuts in the c8 bishop."
+          "note": "Supports d5 with another pawn and opens the f8 bishop's diagonal. The cost is restricting the c8 bishop behind e6."
         },
         {
           "san": "Nc3",
-          "note": "More pressure on d5. White develops toward the center."
+          "note": "Develops while adding a direct attack on d5. The c-pawn has already moved, so this knight no longer obstructs c4.",
+          "comparison": {
+            "san": "Nf3",
+            "explanation": "3.Nf3 is also sound: it supports d4 and controls e5. Nc3 is our choice because it attacks d5 directly; it is not a forced move."
+          }
         },
         {
           "san": "Nf6",
-          "note": "Black defends d5 a third time and gets ready to castle."
+          "note": "Develops a knight, reinforces d5 and controls e4. Black is preparing to bring out the f8 bishop and castle."
         },
         {
           "san": "Bg5",
-          "note": "Pins the f6 knight, which is one of d5's defenders."
+          "note": "Attacks the f6 knight along the diagonal toward the queen. This relative pin creates pressure, but does not by itself win d5: the e6 pawn still defends it."
         }
       ],
       "questions": [
@@ -63,7 +75,7 @@
           "prompt": "Black matched you in the center. Offer the gambit.",
           "answer": "c4",
           "hint": "Hit d5 from the side with a flank pawn.",
-          "explanation": "2.c4 attacks d5 without blocking the c-pawn. If Black takes, White usually wins the pawn back with e3 and Bxc4.",
+          "explanation": "2.c4 attacks d5 from the side. Compared with 2.Nc3, it keeps the c-pawn active. After ...dxc4, White can develop with Nf3 and e3, then usually recover with Bxc4.",
           "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2"
         },
         {
@@ -80,64 +92,84 @@
             "Nf3"
           ],
           "hint": "Develop the queenside knight.",
-          "explanation": "3.Nc3 is the main line. The knight hits d5 and prepares Bg5. 3.Nf3 is also good and more flexible.",
+          "explanation": "3.Nc3 develops and attacks d5 directly. 3.Nf3 is equally respectable, supporting d4 and controlling e5 instead. This course chooses Nc3 for immediate pressure, not because Nf3 is a mistake.",
           "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
         }
-      ]
+      ],
+      "plans": {
+        "white": "Develop Nf3 and e3, bring out the f1 bishop and castle. Choose a central break only after checking Black's setup.",
+        "black": "Develop ...Be7 and castle; seek ...c5 or ...e5 to challenge d4 and release the cramped pieces."
+      }
     },
     {
       "id": "accepted",
       "title": "Queen's Gambit Accepted",
       "summary": "Black takes on c4 and gives up the center for a while in exchange for free development. White's job is to win the pawn back calmly and keep a central advantage.",
       "keyIdeas": [
-        "Don't hurry to win back c4. e3 and Bxc4 get it back, because Black cannot safely hold the pawn.",
-        "White's bishop lands on c4 with tempo, aimed at f7 and the center.",
-        "Black's typical plan is ...c5 and ...a6–b5. White answers by castling and thinking about Qe2, Rd1 and a central e4 push."
+        "Recover c4 as part of development with e3 and Bxc4; avoid chasing material with an exposed queen.",
+        "Nf3 controls e5, discouraging Black's freeing ...e5 break. It does not make ...e5 illegal.",
+        "Black's ...c5 attacks d4. Castle before committing the center, then decide whether to maintain the tension, exchange or advance."
       ],
       "line": [
         {
-          "san": "d4"
+          "san": "d4",
+          "note": "Take central space and open the c1 bishop."
         },
         {
-          "san": "d5"
+          "san": "d5",
+          "note": "Black matches White's central claim."
         },
         {
-          "san": "c4"
+          "san": "c4",
+          "note": "Challenge d5 before developing the b1 knight."
         },
         {
           "san": "dxc4",
-          "note": "The Accepted. Black gives up the center to develop freely."
+          "note": "Black exchanges a central foothold for a temporary extra pawn and room for the pieces. This is a sound defense, not a mistake."
         },
         {
           "san": "Nf3",
-          "note": "Stops ...e5 and develops. White isn't worried about the c4 pawn yet."
+          "note": "Develops and controls e5, making Black's immediate central expansion less attractive. White can recover c4 after preparing the bishop.",
+          "comparison": {
+            "san": "Qa4+",
+            "explanation": "The check can recover c4, but moves the queen early and gives Black developing replies such as ...Nc6. Nf3 improves a minor piece first. The immediate 3.e4 is also a sound, sharper system."
+          }
         },
         {
           "san": "Nf6",
-          "note": "Natural development. It also keeps White from playing e4 for free."
+          "note": "Attacks d5 and e4, develops toward castling, and restrains White's central expansion."
         },
         {
           "san": "e3",
-          "note": "Opens the f1 bishop, which gets ready to take on c4."
+          "note": "Opens the f1–c4 diagonal and reinforces d4. The bishop can now recover the pawn in one move.",
+          "checkpoint": {
+            "prompt": "How can you recover c4 while improving a piece?",
+            "answer": "Play e3 to open the f1 bishop, then Bxc4. The pawn recovery should help development rather than distract from it."
+          }
         },
         {
-          "san": "e6"
+          "san": "e6",
+          "note": "Opens Black's f8 bishop and supports a later ...c5 challenge to d4."
         },
         {
           "san": "Bxc4",
-          "note": "The pawn is back. White has a central edge and an active bishop."
+          "note": "Restores material and develops the bishop toward f7. This is efficient development, though it does not force Black to answer a new threat."
         },
         {
           "san": "c5",
-          "note": "Black's standard central counter-strike."
+          "note": "Challenges d4 before White can build a large center unopposed. Black is seeking active counterplay, not just defending."
         },
         {
           "san": "O-O",
-          "note": "King to safety first. The tension in the center can wait."
+          "note": "Secures the king and brings the h1 rook toward the center. White leaves the pawn tension unresolved to keep options open.",
+          "comparison": {
+            "san": "dxc5",
+            "explanation": "Exchanging is legal, but gives up your d4 foothold and clarifies Black's central task. Castling preserves the choice. This is a plan preference, not a claim that every capture loses."
+          }
         },
         {
           "san": "a6",
-          "note": "Prepares ...b5 to kick the bishop."
+          "note": "Prepares ...b5, gaining queenside space and attacking the bishop on c4. White must account for that tempo."
         }
       ],
       "questions": [
@@ -155,8 +187,8 @@
             "e3",
             "e4"
           ],
-          "hint": "Develop a knight that also stops ...e5.",
-          "explanation": "3.Nf3 develops and stops ...e5. 3.e3 and 3.e4 are also main lines. The c4 pawn will come back.",
+          "hint": "Develop the knight that controls e5.",
+          "explanation": "3.Nf3 develops and controls e5, discouraging ...e5. It fits our calm e3/Bxc4 setup. 3.e3 and 3.e4 are also sound systems; the latter claims more space and requires different preparation.",
           "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
         },
         {
@@ -174,7 +206,7 @@
           "prompt": "Time to collect the gambit pawn.",
           "answer": "Bxc4",
           "hint": "The light-squared bishop now has a path to c4.",
-          "explanation": "5.Bxc4 wins the pawn back and puts the bishop on its best diagonal. White keeps a small central edge.",
+          "explanation": "5.Bxc4 recovers the pawn while developing a piece. The bishop now looks toward f7, but this is not a forcing attack or a tempo gain: Black can continue normally with ...c5.",
           "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq - 0 5"
         },
         {
@@ -194,78 +226,100 @@
           "prompt": "Black hits your center with ...c5. What's the calm, principled reply?",
           "answer": "O-O",
           "hint": "King safety first.",
-          "explanation": "6.O-O finishes the kingside setup. Taking on c5 or locking the center too early only helps Black.",
+          "explanation": "6.O-O secures the king and activates the rook before resolving the center. An immediate exchange on c5 would give up the d4 foothold; castling keeps that choice for later. Black still has active counterplay with ...a6 and ...b5.",
           "fen": "rnbqkb1r/pp3ppp/4pn2/2p5/2BP4/4PN2/PP3PPP/RNBQK2R w KQkq - 0 6"
         }
-      ]
+      ],
+      "plans": {
+        "white": "Consider Qe2 and Rd1 after development. Watch ...b5; prepare e4 only when d4 and the king are secure.",
+        "black": "Use ...c5 against d4 and ...a6–b5 to gain time against the bishop. Complete development rather than trying to keep c4 at any cost."
+      }
     },
     {
       "id": "orthodox",
       "title": "Declined: Orthodox Defense",
-      "summary": "Black keeps a solid pawn on d5 with ...e6, ...Be7 and ...Nbd7. White develops for maximum pressure and fights over the c4 square and the c-file.",
+      "summary": "Against ...e6, ...Be7 and ...Nbd7, develop without assuming the pin wins a pawn. Understand the timing of ...dxc4 and prepare for Black's central breaks.",
       "keyIdeas": [
-        "Bg5 pins the f6 knight, which is one of d5's defenders.",
-        "The fight for a tempo. White plays useful moves like Rc1 before Bd3, because Black wants to take on c4 only once the bishop has moved.",
-        "Watch out for the Elephant Trap. The d5 pawn often looks loose when it isn't (see Traps)."
+        "Bg5 makes the f6 knight less free to move; ...Be7 breaks the pin to the queen. Always count the pawn defenders too.",
+        "Rc1 improves the rook before committing the f1 bishop. Black often waits for Bd3 before ...dxc4 so that bishop must move again.",
+        "A space advantage needs development behind it. Finish with O-O and watch for Black's freeing ...c5 or ...e5."
       ],
       "line": [
         {
-          "san": "d4"
+          "san": "d4",
+          "note": "Occupy d4 and control e5."
         },
         {
-          "san": "d5"
+          "san": "d5",
+          "note": "Black stakes a claim to d5 and e4."
         },
         {
-          "san": "c4"
+          "san": "c4",
+          "note": "Challenge the d5 pawn with a flank pawn."
         },
         {
-          "san": "e6"
+          "san": "e6",
+          "note": "Black reinforces d5 but restricts the c8 bishop."
         },
         {
-          "san": "Nc3"
+          "san": "Nc3",
+          "note": "Develop and attack d5."
         },
         {
-          "san": "Nf6"
+          "san": "Nf6",
+          "note": "Black develops and reinforces d5."
         },
         {
           "san": "Bg5",
-          "note": "The pin. White now threatens to win d5 by taking on f6."
+          "note": "Creates a relative pin to the queen. Since e6 still protects d5, this is positional pressure rather than an immediate pawn win.",
+          "checkpoint": {
+            "prompt": "Does pinning the f6 knight mean d5 is free to capture?",
+            "answer": "No. The e6 pawn still defends d5. A pin is one detail in a full count of attackers, defenders and tactical replies."
+          }
         },
         {
           "san": "Be7",
-          "note": "Breaks the pin and gets ready to castle."
+          "note": "Interposes the bishop between g5 and d8, freeing the f6 knight to move without exposing the queen. It also prepares castling."
         },
         {
           "san": "e3",
-          "note": "Solid. Protects d4 and opens the f1 bishop."
+          "note": "Supports d4 and opens the f1 bishop. The c1 bishop is already outside the pawn chain, so e3 does not trap it."
         },
         {
-          "san": "O-O"
+          "san": "O-O",
+          "note": "Black secures the king before opening the center."
         },
         {
-          "san": "Nf3"
+          "san": "Nf3",
+          "note": "Develops the kingside knight, supports d4 and controls e5. The f1 bishop still needs to develop before White can castle."
         },
         {
           "san": "Nbd7",
-          "note": "The Orthodox setup. Black supports ...c5 or ...e5 later."
+          "note": "Develops the b8 knight without blocking the c-pawn. It adds support for ...c5 and ...e5, though it temporarily restricts the c8 bishop."
         },
         {
           "san": "Rc1",
-          "note": "A useful waiting move. It aims at the c-file before Black plays ...c5."
+          "note": "Places the rook on the file that may open after pawn exchanges. It is also a useful move before committing the f1 bishop.",
+          "comparison": {
+            "san": "Bd3",
+            "explanation": "7.Bd3 is also a natural developing move. After ...dxc4 the bishop must move again. Rc1 makes a useful rook move first, but does not prevent Black from capturing on c4."
+          }
         },
         {
-          "san": "c6"
+          "san": "c6",
+          "note": "Reinforces d5 again. Black is solid but must still find activity for the c8 bishop."
         },
         {
           "san": "Bd3",
-          "note": "Black can now take on c4, but White wins it back in one move."
+          "note": "Develops toward h7 and clears f1 for castling. Black can now gain a tempo against this bishop with ...dxc4."
         },
         {
-          "san": "dxc4"
+          "san": "dxc4",
+          "note": "Black releases the central tension after the bishop has moved: recapturing costs White another bishop move."
         },
         {
           "san": "Bxc4",
-          "note": "White keeps a small but lasting edge thanks to the extra space."
+          "note": "Restores material and keeps the bishop active. White still needs to castle; Black can challenge the center, so neither side has a forced advantage."
         }
       ],
       "questions": [
@@ -303,13 +357,13 @@
             "e3",
             "O-O"
           ],
-          "prompt": "Both sides are developing. Bring out your last minor piece.",
+          "prompt": "Your f1 bishop is still at home. Which knight move supports d4 and prepares castling?",
           "answer": "Nf3",
           "alternatives": [
             "Rc1"
           ],
           "hint": "The kingside knight is still at home.",
-          "explanation": "6.Nf3 is the main line. It finishes minor-piece development and supports d4 and e5.",
+          "explanation": "6.Nf3 develops the kingside knight, supports d4 and controls e5. The f1 bishop has not developed yet: Bd3 or Be2 and O-O still remain. Rc1 is a reasonable alternative move order.",
           "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR w KQ - 1 6"
         },
         {
@@ -334,73 +388,93 @@
           ],
           "prompt": "Black finally took on c4. Restore material.",
           "answer": "Bxc4",
-          "hint": "Win the pawn back without losing a tempo.",
-          "explanation": "9.Bxc4. This is the classic fight for a tempo. Black waited until Bd3 to take, so the bishop moves twice. White's useful Rc1 makes up for it, and the small space edge stays.",
+          "hint": "Use the bishop on d3 to recover the pawn.",
+          "explanation": "9.Bxc4 restores material. Black waited until Bd3 to capture, so White's bishop has moved twice. Rc1 was useful preparation for a future open c-file; White should now finish development with O-O.",
           "fen": "r1bq1rk1/pp1nbppp/2p1pn2/6B1/2pP4/2NBPN2/PP3PPP/2RQK2R w K - 0 9"
         }
-      ]
+      ],
+      "plans": {
+        "white": "Castle, improve the queen and rooks, then look for e4 if supported. Do not rush pawn captures just because a knight appears pinned.",
+        "black": "Free the position with ...c5 or ...e5 when prepared; develop the c8 bishop after creating room."
+      }
     },
     {
       "id": "slav",
       "title": "Slav Defense",
-      "summary": "Black defends d5 with ...c6, which keeps the c8 bishop free to develop. White plays a4 to stop ...b5, wins back c4, and aims for e4.",
+      "summary": "Black supports d5 with ...c6 while keeping the c8 bishop's diagonal open. After ...dxc4, a4 discourages ...b5; recover c4, castle, and prepare e4 with support.",
       "keyIdeas": [
-        "After ...dxc4, Black wants to hold the pawn with ...b5. 5.a4 stops that for good.",
-        "Black's main development is ...Bf5, putting the bishop outside the pawn chain before ...e6.",
-        "White's bishop wins back c4. Then the plan is e3, O-O, Qe2 and a central break with e4."
+        "...c6 reinforces d5 while leaving the c8 bishop's diagonal open, but occupies the b8 knight's natural c6 square.",
+        "After ...dxc4, a4 controls b5 and makes it harder for Black to maintain the extra pawn with ...b5. It also weakens b4.",
+        "After recovering c4, castle and prepare e4 with care. Black's ...Bb4 pins Nc3 and directly contests that plan."
       ],
       "line": [
         {
-          "san": "d4"
+          "san": "d4",
+          "note": "Occupy the center with d4."
         },
         {
-          "san": "d5"
+          "san": "d5",
+          "note": "Black occupies d5."
         },
         {
-          "san": "c4"
+          "san": "c4",
+          "note": "Challenge d5 and offer the c-pawn."
         },
         {
           "san": "c6",
-          "note": "The Slav. It supports d5 without shutting in the c8 bishop."
+          "note": "Supports d5 without placing a pawn on e6, so the c8 bishop can leave the back rank."
         },
         {
-          "san": "Nf3"
+          "san": "Nf3",
+          "note": "Supports d4 and controls e5 while keeping the b1 knight flexible."
         },
         {
-          "san": "Nf6"
+          "san": "Nf6",
+          "note": "Black develops and increases control of e4."
         },
         {
-          "san": "Nc3"
+          "san": "Nc3",
+          "note": "Adds pressure on d5. Now both white knights influence the center."
         },
         {
           "san": "dxc4",
-          "note": "Now Black takes and hopes to hold the pawn with ...b5."
+          "note": "Black captures after developing a knight. The extra pawn may be supported by ...b5 if White allows it."
         },
         {
           "san": "a4",
-          "note": "Stops ...b5 for good. The c4 pawn is now weak."
+          "note": "Controls b5, making it harder to support c4 with ...b5. The cost is leaving b4 less well controlled by White's pawns.",
+          "comparison": {
+            "san": "e3",
+            "explanation": "5.e3 develops the bishop's diagonal immediately, but allows ...b5 to support c4 and gain space. Our 5.a4 addresses that specific threat first; it does weaken b4."
+          },
+          "checkpoint": {
+            "prompt": "What is Black hoping to do before you recover c4, and what square can you control to interfere?",
+            "answer": "Black wants ...b5 to support c4. The move a4 controls b5, at the price of weakening b4."
+          }
         },
         {
           "san": "Bf5",
-          "note": "The point of the Slav. The bishop comes out before ...e6."
+          "note": "Develops the c8 bishop before ...e6 can shut its diagonal. It also controls e4, the square White wants to occupy."
         },
         {
-          "san": "e3"
+          "san": "e3",
+          "note": "Opens the f1 bishop's diagonal to c4 and reinforces d4. The tradeoff is temporarily restricting White's c1 bishop."
         },
         {
-          "san": "e6"
+          "san": "e6",
+          "note": "Supports the center and releases the f8 bishop. Black's light-squared bishop is already outside the pawn chain."
         },
         {
           "san": "Bxc4",
-          "note": "Material is level, and White has a central majority."
+          "note": "Recovers the pawn and develops toward f7. White has a d- and e-pawn against Black's e-pawn in the center, but still must prepare e4."
         },
         {
           "san": "Bb4",
-          "note": "Pins the c3 knight to make e4 harder."
+          "note": "Pins Nc3 to the king, making it harder for that knight to help an e4 advance. The b4 square became available after a4."
         },
         {
           "san": "O-O",
-          "note": "Next comes Qe2 and e4 to break open the center."
+          "note": "Removes the absolute pin on Nc3 and secures the king. Qe2 may help prepare e4, but check Black's pressure before pushing."
         }
       ],
       "questions": [
@@ -436,7 +510,7 @@
           "prompt": "Black took on c4 and wants to hold it with ...b5. Stop that plan.",
           "answer": "a4",
           "hint": "A rook-pawn move puts a stop to ...b5.",
-          "explanation": "5.a4 takes away ...b5. The c4 pawn can't be held, and White will win it back with Bxc4.",
+          "explanation": "5.a4 controls b5 and makes ...b5 harder to sustain, so e3 and Bxc4 can recover c4 in the main line. This is not a permanent ban on ...b5: pawn breaks depend on tactics. Also notice the weakened b4 square, which Black can use with ...Bb4.",
           "fen": "rnbqkb1r/pp2pppp/2p2n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5"
         },
         {
@@ -455,11 +529,180 @@
             "e3",
             "e6"
           ],
-          "prompt": "Collect the pawn and develop with tempo.",
+          "prompt": "Your bishop's diagonal is open. Recover c4 while developing.",
           "answer": "Bxc4",
           "hint": "e3 opened a diagonal for your bishop.",
-          "explanation": "7.Bxc4 wins the pawn back. White has an easy game with O-O, Qe2 and e4 to come.",
+          "explanation": "7.Bxc4 restores material and develops toward f7. It does not gain a forcing tempo. After ...Bb4, castle to remove the pin on Nc3, then prepare Qe2 and e4 only if the center is supported.",
           "fen": "rn1qkb1r/pp3ppp/2p1pn2/5b2/P1pP4/2N1PN2/1P3PPP/R1BQKB1R w KQkq - 0 7"
+        }
+      ],
+      "plans": {
+        "white": "Use Qe2 and piece support to prepare e4. Watch pressure on c3 and d4 rather than assuming the central advance works automatically.",
+        "black": "Use ...Bb4 and ...Bf5 to restrain e4. Castle and look for a timely ...c5 or ...e5 break."
+      }
+    },
+    {
+      "id": "exchange",
+      "title": "Exchange: From Opening to Plan",
+      "summary": "Trade on d5 to reach the Carlsbad structure. Learn when a minority attack makes sense and why a pawn break needs preparation.",
+      "keyIdeas": [
+        "After cxd5 exd5, the pawn structure changes. A plan that works here does not automatically work in the Accepted or Slav.",
+        "White can prepare b4–b5 to undermine c6 and create a target on the c-file; this aims at weak pawns, not checkmate.",
+        "Finish development first. Black can use ...Ne4 and kingside activity while White prepares queenside play."
+      ],
+      "line": [
+        {
+          "san": "d4",
+          "note": "Occupy the center."
+        },
+        {
+          "san": "d5",
+          "note": "Black establishes d5."
+        },
+        {
+          "san": "c4",
+          "note": "Challenge d5 with the flank pawn."
+        },
+        {
+          "san": "e6",
+          "note": "Reinforce d5 with e6."
+        },
+        {
+          "san": "Nc3",
+          "note": "Develop and attack d5."
+        },
+        {
+          "san": "Nf6",
+          "note": "Develop and reinforce d5."
+        },
+        {
+          "san": "cxd5",
+          "note": "Exchange the c-pawn for Black's d-pawn to clarify the structure.",
+          "comparison": {
+            "san": "Nf3",
+            "explanation": "4.Nf3 maintains the tension and is sound. cxd5 chooses a clearer pawn structure; it does not win material because ...exd5 restores it."
+          }
+        },
+        {
+          "san": "exd5",
+          "note": "The e-pawn replaces the d-pawn on d5. White now has two queenside pawns (a and b) against Black's three (a, b and c): the structure behind a possible minority attack."
+        },
+        {
+          "san": "Bg5",
+          "note": "Develop outside the future e3 pawn chain and place a relative pin on Nf6."
+        },
+        {
+          "san": "Be7",
+          "note": "Break the pin and prepare to castle."
+        },
+        {
+          "san": "e3",
+          "note": "Support d4 and release the f1 bishop."
+        },
+        {
+          "san": "O-O",
+          "note": "Secure the king."
+        },
+        {
+          "san": "Bd3",
+          "note": "Develop toward h7 and prepare castling."
+        },
+        {
+          "san": "Nbd7",
+          "note": "Develop without blocking the c-pawn; ...c6 can reinforce d5."
+        },
+        {
+          "san": "Nf3",
+          "note": "Support d4 and clear g1 for castling. A setup with Nge2 is another sound plan, but this lesson uses Nf3."
+        },
+        {
+          "san": "c6",
+          "note": "Support d5 with a pawn. The c6 pawn may later become a target after a b4–b5 break."
+        },
+        {
+          "san": "O-O",
+          "note": "Secure the king before beginning a flank operation.",
+          "checkpoint": {
+            "prompt": "Should White start b4 immediately or secure the king first?",
+            "answer": "Castle first in this setup. A minority attack takes several moves; White needs king safety and developed pieces before investing time on the flank."
+          }
+        },
+        {
+          "san": "Re8",
+          "note": "Put the rook on the e-file and prepare central piece activity. Black can answer queenside play with pressure in the center or on the kingside."
+        }
+      ],
+      "plans": {
+        "white": "Consider Rc1, Qc2, Rab1 and b4–b5 if Black cannot create stronger central threats. A supported e4 break is another plan, not an automatic move.",
+        "black": "Watch the b5 break, seek ...Ne4 and improve the c8 bishop. If White spends many tempi on the flank, create central or kingside activity."
+      },
+      "questions": [
+        {
+          "id": "qg-exchange-1",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "e6",
+            "Nc3",
+            "Nf6"
+          ],
+          "prompt": "Choose the pawn exchange that reaches the Carlsbad structure.",
+          "answer": "cxd5",
+          "alternatives": [
+            "Nf3"
+          ],
+          "hint": "Exchange your c-pawn for Black's d-pawn.",
+          "explanation": "4.cxd5 exd5 changes the structure without winning a pawn. Keeping the tension with Nf3 is also sound; the exchange gives us a clear structure to study.",
+          "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+        },
+        {
+          "id": "qg-exchange-2",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "e6",
+            "Nc3",
+            "Nf6",
+            "cxd5",
+            "exd5"
+          ],
+          "prompt": "Black recaptured with the e-pawn. Develop your c1 bishop before e3 restricts it.",
+          "answer": "Bg5",
+          "alternatives": [
+            "Bf4"
+          ],
+          "hint": "Use the diagonal toward g5.",
+          "explanation": "5.Bg5 develops outside the future pawn chain and puts pressure on Nf6. After ...Be7, White will play e3 and Bd3. Bf4 is another sound square.",
+          "fen": "rnbqkb1r/ppp2ppp/5n2/3p4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5"
+        },
+        {
+          "id": "qg-exchange-3",
+          "moves": [
+            "d4",
+            "d5",
+            "c4",
+            "e6",
+            "Nc3",
+            "Nf6",
+            "cxd5",
+            "exd5",
+            "Bg5",
+            "Be7",
+            "e3",
+            "O-O",
+            "Bd3",
+            "Nbd7",
+            "Nf3",
+            "c6"
+          ],
+          "prompt": "You want a future b4–b5 break. What should you complete first?",
+          "answer": "O-O",
+          "alternatives": [],
+          "hint": "Bring your king to safety.",
+          "explanation": "9.O-O completes king safety before a slow queenside operation. Later b4–b5 aims to weaken c6; it is not an immediate attack on the king. Always check Black's central counterplay first.",
+          "fen": "r1bq1rk1/pp1nbppp/2p2n2/3p2B1/3P4/2NBPN2/PP3PPP/R2QK2R w KQ - 0 9"
         }
       ]
     },
@@ -474,40 +717,56 @@
       ],
       "line": [
         {
-          "san": "d4"
+          "san": "d4",
+          "note": "Begin with central space."
         },
         {
-          "san": "d5"
+          "san": "d5",
+          "note": "Black occupies d5."
         },
         {
-          "san": "c4"
+          "san": "c4",
+          "note": "Offer c4 to draw the d-pawn away."
         },
         {
-          "san": "dxc4"
+          "san": "dxc4",
+          "note": "Black accepts the pawn; this alone is a sound choice."
         },
         {
-          "san": "e3"
+          "san": "e3",
+          "note": "Opens the f1 bishop so Bxc4 is possible."
         },
         {
           "san": "b5",
-          "note": "Greedy. Black tries to hang on to the c4 pawn."
+          "note": "Tries to keep c4 with a pawn chain. Black is spending time on pawns while the pieces remain at home."
         },
         {
           "san": "a4",
-          "note": "Hits the base of the pawn chain right away."
+          "note": "Attacks the supporting b5 pawn. If Black pushes ...b4, the support of c4 disappears and Bxc4 becomes possible."
         },
         {
-          "san": "c6"
+          "san": "c6",
+          "note": "Reinforces b5, but leaves a tactical weakness on the f3–a8 diagonal once the pawns exchange."
         },
         {
-          "san": "axb5"
+          "san": "axb5",
+          "note": "Removes b5's current occupant and forces Black to reconsider the chain."
         },
         {
-          "san": "cxb5"
+          "san": "cxb5",
+          "note": "Restores the chain, but vacates c6. The f3–e4–d5–c6–b7–a8 diagonal is now open."
         },
         {
           "san": "Qf3",
-          "note": "The long diagonal f3–a8 is open. The rook on a8 and the knight on b8 can't both be saved."
+          "note": "Attacks the rook on a8. For example, ...Nc6 blocks the diagonal but allows Qxc6+, winning a knight. The early queen move is justified by a concrete tactic.",
+          "comparison": {
+            "san": "Bxc4",
+            "explanation": "6.Bxc4 is a normal recovery, but misses the chance to win a piece. Qf3 is stronger here because the opened diagonal creates a concrete threat to Ra8."
+          },
+          "checkpoint": {
+            "prompt": "What changed when Black's c-pawn left c6? Is an early queen move justified now?",
+            "answer": "The diagonal from f3 to a8 opened. Qf3 attacks a rook, so this queen move creates a concrete threat rather than merely hoping for an attack."
+          }
         }
       ],
       "questions": [
@@ -567,10 +826,28 @@
             "Nf3"
           ],
           "hint": "Don't take on d5. Just keep developing.",
-          "explanation": "6.e3! The Elephant Trap is 6.Nxd5?? Nxd5! 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8, and Black is a piece up. The pin on f6 isn't real.",
+          "explanation": "6.e3 or 6.Nf3 continues development safely. The tempting 6.Nxd5?? fails to ...Nxd5! 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8, leaving Black a piece ahead. The f6 knight is relatively pinned to the queen, not absolutely pinned to the king: a forcing check changes the calculation.",
           "fen": "r1bqkb1r/pppn1ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq - 0 6"
         }
-      ]
+      ],
+      "plans": {
+        "white": "If Black abandons the extra pawn, recover it and develop. If Black tries to hold it, calculate forcing threats before sending the queen out.",
+        "black": "Prefer development and central counterplay to defending c4 with more pawn moves. In the Elephant Trap, a relative pin can be broken with a forcing check."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Chess.com: Queen's Gambit overview",
+      "url": "https://www.chess.com/openings/Queens-Gambit"
+    },
+    {
+      "title": "Chess.com: Queen's Gambit Accepted",
+      "url": "https://www.chess.com/openings/Queens-Gambit-Accepted"
+    },
+    {
+      "title": "Chess.com: Slav Defense",
+      "url": "https://www.chess.com/openings/Slav-Defense"
     }
   ]
 }

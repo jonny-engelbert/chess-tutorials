@@ -6,8 +6,12 @@ Shipped courses:
 
 | Opening | You play | Chunks |
 |---|---|---|
-| Queen's Gambit | White | Introduction & Main Line · Accepted · Declined: Orthodox · Slav · Traps & Pitfalls |
+| Queen's Gambit | White | Introduction & Main Line · Accepted · Declined: Orthodox · Slav · Exchange: From Opening to Plan · Traps & Pitfalls |
+| Italian Game | White | Introduction · Giuoco Piano · Two Knights · Hungarian Defense |
+| Ruy López | White | Introduction · Morphy Defense · Berlin Defense · Steinitz Defense |
 | Caro-Kann Defense | Black | Introduction · Classical (4...Bf5) · Advance · Exchange · Panov–Botvinnik · Traps to Avoid |
+| Sicilian Defense | Black | Introduction · Open Sicilian: Classical · Alapin · Closed Sicilian · Rossolimo |
+| French Defense | Black | Introduction · Advance · Exchange · Classical · Tarrasch |
 
 ## Use it
 
@@ -37,7 +41,7 @@ The build is a static site with no backend, so you can host `dist/` anywhere. Ev
 
 ## Pedagogy
 
-1. **Study.** Step through the chunk's main line with ← and →. Key moves have a note, and each chunk lists its key ideas.
+1. **Study.** Step through the chunk's main line with ← and →. The Queen's Gambit, Italian, Ruy López, Sicilian and French have a note on every move, candidate-move comparisons, ungraded “Think first” prompts with expandable reasoning, and plans for both sides. Comparisons distinguish repertoire choices from actual mistakes; they are written explanations, not engine evaluations. These five courses link to further reading. The Caro-Kann retains its original annotations.
 2. **Drill.** Play your side of the whole line from memory while the opponent replies automatically. A wrong move shows the right one with an arrow and its note.
 3. **Quiz.** Find the move in 3 key positions, on the board or by typing it (`Nf3`, `0-0`, `e2e4` all work).
    - **Hints:** two levels, a text hint and then highlighting the piece to move.
@@ -74,6 +78,10 @@ Stack: Vite + React 18 + TypeScript, `chess.js` for rules, `react-chessboard` fo
 
 1. Create `src/openings/<id>.json` with `id`, `name`, `eco`, `side` (`"white"`/`"black"`), `summary` and `chunks[]`.
 2. For each chunk, write `title`, `summary`, `keyIdeas[]`, `line[]` (`{ san, note? }` from the initial position) and exactly 3 `questions[]`.
+   - Optional `plans: { white, black }` explains what each side should do after the line.
+   - A line move can include `comparison: { san, explanation }`. Its SAN is a candidate in the position **before** the main move; validation checks its legality.
+   - A line move can include `checkpoint: { prompt, answer }`, shown before that move with expandable reasoning. It does not affect review grades.
+   - Optional opening-level `sources: [{ title, url }]` supplies further-reading links.
 3. Each question needs:
    - `moves`: the SAN moves that lead to the position
    - `prompt`

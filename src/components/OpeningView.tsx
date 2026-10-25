@@ -78,6 +78,15 @@ export function OpeningView({ opening, onStart, onExit }: Props) {
           );
         })}
       </ol>
+      {opening.sources && (
+        <aside className="sources">
+          <h3>Further reading</h3>
+          <p className="muted small">These lessons teach one practical repertoire. Other sound moves and move orders exist.</p>
+          <ul>{opening.sources.map((source) => (
+            <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>
+          ))}</ul>
+        </aside>
+      )}
     </div>
   );
 }

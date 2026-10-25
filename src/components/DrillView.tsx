@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { Square } from 'chess.js';
 import { Board, applyMove } from './Board';
 import { linePositions, moveLabel } from './StudyView';
+import { MoveExplanation } from './MoveExplanation';
 import { progress } from '../lib/progress';
 import type { Chunk, Opening } from '../lib/types';
 
@@ -82,7 +83,7 @@ export function DrillView({ opening, chunk, onQuiz, onExit }: Props) {
           {miss && expected && (
             <div className="feedback wrong">
               <b>{miss}</b> leaves the line. The move is <b>{moveLabel(ply, chunk.line[ply].san)}</b>.
-              {chunk.line[ply].note && <p className="small">{chunk.line[ply].note}</p>}
+              <MoveExplanation move={chunk.line[ply]} />
               <div className="actions">
                 <button onClick={() => { setMiss(null); setPly((p) => p + 1); }}>Play it & continue</button>
               </div>

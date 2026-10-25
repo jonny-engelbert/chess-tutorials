@@ -21,7 +21,7 @@ export function Home({ onOpen, onReview }: Props) {
         <div>
           <h1>Opening Tutor</h1>
           <p className="muted">
-            Study a line, drill it from memory, then lock it in with spaced-repetition quizzes.
+            Understand the plan, compare candidate moves, then build recall with drills and spaced-repetition quizzes.
           </p>
         </div>
         <div className="stats">
@@ -58,7 +58,7 @@ export function Home({ onOpen, onReview }: Props) {
       <section className="method">
         <h3>How it works</h3>
         <ol>
-          <li><b>Study</b>: step through each chunk's main line with a note on every key move.</li>
+          <li><b>Study</b>: step through the line, compare moves and explain your choice at the “Think first” prompts. Read both sides' plans.</li>
           <li><b>Drill</b>: play the whole line from memory against an auto-replying opponent.</li>
           <li><b>Quiz</b>: find the move in 3 key positions. Hints cost you grade points.</li>
           <li><b>Review</b>: cards come back on an SM-2 schedule, mixed across openings. Missed cards repeat within the same session.</li>
