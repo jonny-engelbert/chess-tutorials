@@ -61,6 +61,21 @@ export const progress = {
   reset() {
     commit(empty());
   },
+  /** Serialise progress for backup / moving to another device. */
+  exportJson(): string {
+    return JSON.stringify(data, null, 2);
+  },
+  /** Replace progress from an exported file. Returns false if the file isn't valid progress data. */
+  importJson(raw: string): boolean {
+    try {
+      const parsed = JSON.parse(raw);
+      if (!parsed || parsed.version !== 1 || typeof parsed.cards !== 'object' || parsed.cards === null) return false;
+      commit({ ...empty(), ...parsed });
+      return true;
+    } catch {
+      return false;
+    }
+  },
 };
 
 export function useProgress(): ProgressData {

@@ -40,6 +40,8 @@ export function QuizSession({ title, cards, onExit }: Props) {
   const [typed, setTyped] = useState('');
   const [results, setResults] = useState<Result[]>([]);
   const [toast, setToast] = useState<string | null>(null);
+  // Touch devices: tap the board by default, typing is opt-in (the keyboard would cover the board).
+  const [typing, setTyping] = useState(() => !window.matchMedia?.('(pointer: coarse)').matches);
   const started = useRef(Date.now());
 
   const entry = queue[pos];
@@ -124,6 +126,7 @@ export function QuizSession({ title, cards, onExit }: Props) {
     setPhase({ kind: 'ask' });
     setHints(0);
     setTyped('');
+    window.scrollTo(0, 0);
   }
 
   const sq = answerSquares(q);
@@ -156,21 +159,24 @@ export function QuizSession({ title, cards, onExit }: Props) {
             {relearn && <span className="tag">relearn</span>}
           </div>
           <h2 className="prompt">{q.prompt}</h2>
-          <p className="muted">{sideName} to move. Play it on the board or type it in.</p>
+          <p className="muted">{sideName} to move. Play it on the board{typing ? ' or type it in' : ''}.</p>
 
           {!done && (
             <>
-              <form onSubmit={onType} className="type-row">
-                <input
-                  value={typed}
-                  onChange={(e) => setTyped(e.target.value)}
-                  placeholder="e.g. Nf3, O-O, exd5"
-                  aria-label="Type your move"
-                  autoComplete="off"
-                  spellCheck={false}
-                />
-                <button type="submit" disabled={!typed.trim()}>Submit</button>
-              </form>
+              {typing && (
+                <form onSubmit={onType} className="type-row">
+                  <input
+                    value={typed}
+                    onChange={(e) => setTyped(e.target.value)}
+                    placeholder="e.g. Nf3, O-O, exd5"
+                    aria-label="Type your move"
+                    autoComplete="off"
+                    autoCapitalize="off"
+                    spellCheck={false}
+                  />
+                  <button type="submit" disabled={!typed.trim()}>Submit</button>
+                </form>
+              )}
               {phase.kind === 'retry' && (
                 <div className="feedback wrong">
                   <strong>{phase.tried}</strong> isn't the move we're looking for. You get one more try.
@@ -185,8 +191,14 @@ export function QuizSession({ title, cards, onExit }: Props) {
                   </button>
                 )}
                 <button className="secondary" onClick={() => finish('revealed')}>Show answer</button>
+                <button className="secondary" onClick={() => setTyping((t) => !t)}>
+                  {typing ? 'Hide keyboard input' : '⌨ Type instead'}
+                </button>
               </div>
-              <p className="fen" title="Position (FEN)">FEN: {q.fen}</p>
+              <details className="fen-details">
+                <summary>Position (FEN)</summary>
+                <p className="fen">{q.fen}</p>
+              </details>
             </>
           )}
 

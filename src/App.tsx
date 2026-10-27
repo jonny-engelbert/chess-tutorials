@@ -62,7 +62,7 @@ export function App() {
   } else if (section === 'o' && opening) {
     body = <OpeningView opening={opening} onStart={start} onExit={() => go('/')} />;
   } else {
-    body = <Home onOpen={(id) => go(`/o/${id}`)} onReview={() => go('/review')} />;
+    body = <Home onOpen={(id) => go(`/o/${id}`)} onReview={() => go('/review')} onContinue={(o, c, m) => go(`/o/${o}/${c}/${m}`)} />;
   }
 
   return (
